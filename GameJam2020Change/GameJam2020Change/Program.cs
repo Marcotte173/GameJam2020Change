@@ -6,7 +6,17 @@ namespace GameJam2020Change
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hey Everyone. Ready to make a game?");
+            Color.SetupConsole();
+            Write.Line(Color.RED,"Hello");
+            Write.Line(Color.BLUE, 6,4,"Now");
+            Write.Line(Color.GREEN,14,6,"I");
+            Write.Line(Color.RED,20,15,"Can");
+            Write.Line(Color.YELLOW,29,10,"Write");
+            Write.Line(Color.RED,36,6,"All");
+            Write.Line(Color.BLUE," Over");
+            Write.Line(Color.RED," The");
+            Write.Line(Color.GREEN," Place");
+            Console.ReadKey();
         }
     }
 }
