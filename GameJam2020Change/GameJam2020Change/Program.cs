@@ -4,6 +4,7 @@ namespace GameJam2020Change
 {
     class Program
     {
+        public static Player p = new Player();
         static void Main(string[] args)
         {
             Color.SetupConsole();
@@ -17,6 +18,15 @@ namespace GameJam2020Change
             Write.Line(Color.RED," The");
             Write.Line(Color.GREEN," Place");
             Console.ReadKey();
+            Test();
+        }
+
+        public static void Test()
+        {
+            Write.Line("What is your name?");
+            string name = Return.Option();
+
+            
         }
     }
 }
