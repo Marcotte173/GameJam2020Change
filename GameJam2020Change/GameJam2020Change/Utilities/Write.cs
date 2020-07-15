@@ -6,7 +6,7 @@ public class Write
 {
     public static void Line(string text)
     {
-        Console.Write(text);
+        Console.Write(text+ "\n");
     }
     public static void Line(string colour, string text)
     {
@@ -61,5 +61,16 @@ public class Write
             + Color.RESET + $"{text3}"
             + colour2 + $"{text4}"
             + Color.RESET + $"{text5}\n");
+    }
+
+    public static void KeyPress(int x, int y)
+    {
+        Write.Line(x,y,"Press any key to continue");
+        Console.ReadKey();
+    }
+    public static void KeyPress()
+    {
+        Write.Line(0, 26, "Press any key to continue");
+        Console.ReadKey();
     }
 }

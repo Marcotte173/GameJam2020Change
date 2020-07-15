@@ -6,6 +6,13 @@ public class Return
 {
     static Random rand = new Random();
     internal static string String() => Console.ReadLine();
+    public static bool Confirm(string choice)
+    {
+        Write.Line($"\n{choice}?\n\n");
+        Write.Line("[Y]es \t [N]o\n");
+        string choose = Return.Option();
+        return (choose == "y");
+    }
     public static string Option() => Console.ReadKey(true).KeyChar.ToString().ToLower();
     internal static int RandomInt(int min, int max) => rand.Next(min, max);
     internal static bool HaveGold(int price) => (GameJam2020Change.Program.p.gold >= price);

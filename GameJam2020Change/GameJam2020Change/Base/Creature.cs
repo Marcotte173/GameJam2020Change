@@ -4,6 +4,8 @@ using System.Text;
 
 public class Creature
 {
+    public string name;
+    public string typeName;
     public int hp;
     public int maxHp;
     public int energy;
