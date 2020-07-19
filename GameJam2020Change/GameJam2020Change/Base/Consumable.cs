@@ -10,9 +10,10 @@ public class Consumable : Item
     public Consumable(string name, int heal, int buff)
     : base()
     {
+        weapon = flase;
         this.name = name;
         this.heal = heal;
         this.buff = buff;
-        consumable = true;
+        
     }
 }
