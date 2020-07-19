@@ -7,7 +7,7 @@ public class Consumable : Item
     public int heal;
     public int buff;
 
-    public Weapon(string name, int heal, int buff)
+    public Consumable(string name, int heal, int buff)
     : base()
     {
         this.name = name;
