@@ -22,10 +22,10 @@ public class Item
     };
     public static List<Item> consumableList = new List<Item>
     {
-        new Armor("None", 0,0),
-        new Armor("Apple", 1,5),
-        new Armor("Potion", 10,0),
-        new Armor("Chicken", 12,10),
+        new Consumable("None", 0,0),
+        new Consumable("Apple", 1,5),
+        new Consumable("Potion", 10,0),
+        new Consumable("Chicken", 12,10),
     };
 
     public Item()
