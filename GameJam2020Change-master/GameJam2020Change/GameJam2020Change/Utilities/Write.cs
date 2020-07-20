@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 public class Write
 {
@@ -72,5 +73,14 @@ public class Write
     {
         Write.Line(0, 26, "Press any key to continue");
         Console.ReadKey();
+    }
+
+    internal static void DotDotDotSL()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Thread.Sleep(400);
+            Console.Write(".");
+        }
     }
 }

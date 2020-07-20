@@ -25,14 +25,15 @@ public class Combat
             EnemyAttack();
         }
         Console.Clear();
-        Write.Line("You have defeated all your enemies!");
+        Write.Line("You have defeated your enemies!");
+        Write.KeyPress();
         if (boss)
         {
-            Write.KeyPress(0, 28);
             //Go to Zork 
         }
         else
         {
+            Console.Clear();
             rewardXp += Return.RandomInt(0, 3);
             rewardGold += Return.RandomInt(0, 25);
             Write.Line($"You find {rewardGold} gold");
@@ -84,10 +85,10 @@ public class Combat
 
     private static void PlayerAttack()
     {
-        Write.Line(0, 17, "Name : " + Color.NAME + GameJam2020Change.Program.p.name);
-        Write.Line(0, 18, "Class : " + Color.NAME + GameJam2020Change.Program.p.characterClass);
-        Write.Line(0, 19, "Health : " + Color.NAME + GameJam2020Change.Program.p.hp);
-        Write.Line(0, 20, "Energy : " + Color.NAME + GameJam2020Change.Program.p.energy);
+        Write.Line(0, 17, "Name   : " + Color.NAME + GameJam2020Change.Program.p.name);
+        Write.Line(0, 18, "Class  : " + Color.ABILITY + GameJam2020Change.Program.p.characterClass );
+        Write.Line(0, 19, "Health : " + Color.HEALTH + GameJam2020Change.Program.p.hp+ Color.RESET + " / "  + Color.HEALTH + GameJam2020Change.Program.p.maxHp);
+        Write.Line(0, 20, "Energy : " + Color.ENERGY + GameJam2020Change.Program.p.energy + Color.RESET + " / " + Color.ENERGY + GameJam2020Change.Program.p.maxEnergy);
         Write.Line(0, 22, "[1]" + Color.DAMAGE + " Attack   ");
         if (Return.HaveEnergy(1)) Write.Line(0, 23, "[2] " + Color.ABILITY + player.abilityName1);
         else Write.Line(0, 23, "[X] " + Color.GREY + "Not enough energy");

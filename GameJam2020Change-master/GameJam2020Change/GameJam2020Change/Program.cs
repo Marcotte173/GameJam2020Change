@@ -50,7 +50,7 @@ namespace GameJam2020Change
             if (Manager.rogue)   Write.Line(Color.ABILITY, "[3] Flavor to follow. You get a Rogue\n");
             if (Manager.warrior) Write.Line(Color.ABILITY, "[4] Flavor to follow. You get a Warrior\n");
             string choice = Return.Option();
-            if (choice == "1") p = new Player(Class.None);
+            if (choice == "1") p = new Player(Class.Adventurer);
             else if (choice == "2" && Manager.mage) p = new Player(Class.Mage);
             else if (choice == "3" && Manager.rogue) p = new Player(Class.Rogue);
             else if (choice == "4" && Manager.warrior) p = new Player(Class.Warrior);

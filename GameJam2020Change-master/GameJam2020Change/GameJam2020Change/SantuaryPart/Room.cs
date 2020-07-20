@@ -38,11 +38,10 @@ public class Room
         if (Return.RandomInt(1, 101) < 10 + ((int)roomSize * 5)) Summon(3);
         else if (Return.RandomInt(1, 101) < 40 + ((int)roomSize * 5)) Summon(2);
         else if (Return.RandomInt(1, 101) < 80 + ((int)roomSize * 5)) Summon(1);
-        else Alone();
-        visited = true;
+        else Alone();        
     }
 
-    private void Summon(int howMany)
+    protected void Summon(int howMany)
     {
         Console.Clear();
         int x = 50;
@@ -77,6 +76,7 @@ public class Room
             Write.Line(x, y, Monsters.list[summon1].summon);
         }
         Write.KeyPress(0, 28);
+        visited = true;
         Combat.Start();        
     }
 
@@ -94,7 +94,11 @@ public class Room
 
     private void RoomSearch()
     {
-        //Find stuff, but chance of summon
+        Console.Clear();
+        Console.Write("Searching");
+        Write.DotDotDotSL();
+        Write.Line(0,8,"You find some stuff");
+        Write.KeyPress();
     }
 
     public bool IsHallway() => roomType == RoomType.Hallway;

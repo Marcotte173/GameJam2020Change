@@ -53,6 +53,7 @@ public class Explore
             if (d.shell[currentShell.West].room.visited == false) ExploringText();
             ChangeShell(currentShell.West);
         }
+        else Navigate();
     }
 
     private static void ExploringText()

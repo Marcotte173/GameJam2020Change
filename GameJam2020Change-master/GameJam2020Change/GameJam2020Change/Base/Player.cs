@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public enum Class { None,Warrior, Mage, Rogue }
+public enum Class { Adventurer,Warrior, Mage, Rogue }
 public class Player : Creature
 {
     public Class characterClass;
@@ -125,7 +125,7 @@ public class Player : Creature
             abilityName1 = "Fireball";
             abilityName2 = "Shield";
         }
-        else if (characterClass == Class.None)
+        else if (characterClass == Class.Adventurer)
         {
             hp = maxHp = mBaseHp[level];
             damage = mBaseDamage[level];
