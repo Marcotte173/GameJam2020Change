@@ -22,11 +22,19 @@ public class Vendor:Room
         if (visited) Write.Line(visitedFlavor);
         else Write.Line(0,10,flavor);
         Write.KeyPress();
+        //clear vendor inventory and add 4 new items
         list.Clear();
+<<<<<<< HEAD
         list.Add(Items.weapons[Return.RandomInt(1, Items.weapons.Count)]);
         list.Add(Items.armors[Return.RandomInt(1, Items.armors.Count)]);
         list.Add(Items.consumableList[Return.RandomInt(1, Items.consumableList.Count)]);
         list.Add(Items.consumableList[Return.RandomInt(1, Items.consumableList.Count)]);
+=======
+        list.Add(Item.weaponList[Return.RandomInt(1, Item.weaponList.Count)]);
+        list.Add(Item.armorList[Return.RandomInt(1, Item.armorList.Count)]);
+        list.Add(Item.consumableList[Return.RandomInt(1, Item.consumableList.Count)]);
+        list.Add(Item.consumableList[Return.RandomInt(1, Item.consumableList.Count)]);
+>>>>>>> 4790697ff3bd735185d6e9402c769e3a724b5f9b
         Interact();        
     }
 
@@ -36,12 +44,14 @@ public class Vendor:Room
         Console.Clear();
         Write.Line("The Vendor stands before you.\n\n'What can I interest you in?'\n\n");
         Console.SetCursorPosition(0, 6);
+        //write availible items, green if buyable, grey if not
         for (int i = 0; i < list.Count; i++)
         {
             if (Return.HaveGold(list[i].value)) Write.Line("[" + Color.ITEM + (i + 1) + Color.RESET + "] " + Color.ITEM + list[i].name + Color.RESET + " - " + Color.GOLD + list[i].value + Color.RESET);
             else Write.Line(Color.GREY + "[X] " + list[i].name + " - " + list[i].value + Color.RESET);
         }
         Write.Line(0,26,"[0] Leave");
+        //input and check if buyable, then equipt(change to add to invintory?)
         int choice = Return.Int();
         if (choice > 0 && choice < list.Count)
         {
