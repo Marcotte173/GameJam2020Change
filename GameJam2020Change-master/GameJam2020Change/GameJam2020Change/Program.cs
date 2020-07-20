@@ -10,6 +10,7 @@ namespace GameJam2020Change
         static void Main(string[] args)
         {
             Color.SetupConsole();
+            Console.CursorVisible = false;
             Write.Line(Color.HEALTH,40,6," _   _            _ _ _       _              ");
             Write.Line(Color.HEALTH,40,7,"| | | |          (_) | |     | |             ");
             Write.Line(Color.HEALTH,40,8,"| | | | __ _  ___ _| | | __ _| |_ ___  _ __  ");
@@ -42,7 +43,7 @@ namespace GameJam2020Change
 
         private static void CharacterClass()
         {
-            Console.Clear();
+            Console.Clear();            
             Write.Line($"{name}, Your eyes are steady, facing down your future, but there is a spark deep within your gaze. The spark of...\n");
             Write.Line("[1] You have no real background. This is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an adventurer.\n");
             if (Manager.mage)    Write.Line(Color.ABILITY, "[2] Flavor to follow. You get a Mage\n");

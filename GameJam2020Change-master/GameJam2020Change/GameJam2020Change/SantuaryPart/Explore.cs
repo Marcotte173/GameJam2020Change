@@ -11,16 +11,9 @@ public class Explore
     public static void Start()
     {
         Console.Clear();
-        //Navigate();
         while (true)
         {
-            if (currentShell.room.visited == false)
-            {
-                Console.Clear();
-                Write.Line(40, 20, $"You enter a {currentShell.room.name}");
-                Write.KeyPress();
-                currentShell.room.ExploreRoom();
-            }
+            if (currentShell.room.visited == false) currentShell.room.ExploreRoom();
             Navigate();
         }
     }

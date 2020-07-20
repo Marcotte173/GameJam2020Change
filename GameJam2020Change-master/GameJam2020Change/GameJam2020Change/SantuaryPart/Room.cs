@@ -32,19 +32,24 @@ public class Room
     internal virtual void ExploreRoom()
     {
         Console.Clear();
-        if (Return.RandomInt(1, 101) < 75 + ((int)roomSize * 5)) Summon(2);
+        Write.Line(40, 20, $"You enter a {Explore.currentShell.room.name}");
+        Write.KeyPress();
+        Console.Clear();
+        if (Return.RandomInt(1, 101) < 10 + ((int)roomSize * 5)) Summon(3);
+        else if (Return.RandomInt(1, 101) < 40 + ((int)roomSize * 5)) Summon(2);
+        else if (Return.RandomInt(1, 101) < 80 + ((int)roomSize * 5)) Summon(1);
         else Alone();
+        visited = true;
     }
 
-    private void Summon(int v)
+    private void Summon(int howMany)
     {
         Console.Clear();
         int x = 50;
         int y = 14;
         Write.Line(x, y - 2, "You are discovered by...");
         Thread.Sleep(400);
-        int howMany = Return.RandomInt(0, 3);
-        if(howMany == 0)
+        if(howMany == 2)
         {            
             int summon1 = Return.RandomInt(0, Monsters.list.Count);
             Monsters.Summon(Monsters.list[summon1]);
@@ -53,6 +58,18 @@ public class Room
             Monsters.Summon(Monsters.list[summon2]);
             Write.Line(x, y + 1, Monsters.list[summon2].summon);
         }
+        else if (howMany == 3)
+        {
+            int summon1 = Return.RandomInt(0, Monsters.list.Count);
+            Monsters.Summon(Monsters.list[summon1]);
+            Write.Line(x, y, Monsters.list[summon1].summon);
+            int summon2 = Return.RandomInt(0, Monsters.list.Count);
+            Monsters.Summon(Monsters.list[summon2]);
+            Write.Line(x, y + 1, Monsters.list[summon2].summon);
+            int summon3 = Return.RandomInt(0, Monsters.list.Count);
+            Monsters.Summon(Monsters.list[summon3]);
+            Write.Line(x, y, Monsters.list[summon3].summon);
+        }
         else
         {
             int summon1 = Return.RandomInt(0, Monsters.list.Count);
@@ -60,13 +77,15 @@ public class Room
             Write.Line(x, y, Monsters.list[summon1].summon);
         }
         Write.KeyPress(0, 28);
-        Combat.Start();
-        visited = true;
+        Combat.Start();        
     }
 
     public void Alone()
     {
         //Alone, search the room or move on
+        Write.Line("You appear to be alone... for now");
+        Write.Line(0,25 ,"[S]earch the room");
+        Write.Line(0,26, "[M]ove on");
         string choice = Return.Option();
         if (choice == "m") visited = true;
         else if (choice == "s") RoomSearch();

@@ -42,17 +42,16 @@ public class Combat
             rewardGold = 0;
             rewardXp = 0;
             Write.KeyPress(0, 28);
-            Explore.Start();
         }
     }
 
     public static void DisplayCombatText()
     {
         Info();
-        int n = 16;
+        int n = 10;
         for (int i = 0; i < combatText.Count; i++)
         {
-            Write.Line(75, n + i, combatText[i]);
+            Write.Line(0, n + i, combatText[i]);
         }
         combatText.Clear();
     }
@@ -60,6 +59,15 @@ public class Combat
     private static void Info()
     {
         Console.Clear();
+        if (monsterList.Count == 3)
+        {
+            Write.Line(25, 1, "[1] " + monsterList[0].name);
+            Write.Line(25, 2, "Health " + monsterList[0].hp + " / " + monsterList[0].maxHp);
+            Write.Line(50, 1, "[2] " + monsterList[1].name);
+            Write.Line(50, 2, "Health " + monsterList[1].hp + " / " + monsterList[0].maxHp);
+            Write.Line(75, 1, "[3] " + monsterList[1].name);
+            Write.Line(75, 2, "Health " + monsterList[1].hp + " / " + monsterList[0].maxHp);
+        }
         if (monsterList.Count == 2)
         {
             Write.Line(35, 1, "[1] " + monsterList[0].name);
@@ -71,11 +79,15 @@ public class Combat
         {
             Write.Line(50, 1, monsterList[0].name);
             Write.Line(50, 2, "Health " + monsterList[0].hp + " / " + monsterList[0].maxHp);
-        }
+        }        
     }
 
     private static void PlayerAttack()
     {
+        Write.Line(0, 17, "Name : " + Color.NAME + GameJam2020Change.Program.p.name);
+        Write.Line(0, 18, "Class : " + Color.NAME + GameJam2020Change.Program.p.characterClass);
+        Write.Line(0, 19, "Health : " + Color.NAME + GameJam2020Change.Program.p.hp);
+        Write.Line(0, 20, "Energy : " + Color.NAME + GameJam2020Change.Program.p.energy);
         Write.Line(0, 22, "[1]" + Color.DAMAGE + " Attack   ");
         if (Return.HaveEnergy(1)) Write.Line(0, 23, "[2] " + Color.ABILITY + player.abilityName1);
         else Write.Line(0, 23, "[X] " + Color.GREY + "Not enough energy");

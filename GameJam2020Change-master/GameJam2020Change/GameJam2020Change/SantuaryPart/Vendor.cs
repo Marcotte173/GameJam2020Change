@@ -24,17 +24,10 @@ public class Vendor:Room
         Write.KeyPress();
         //clear vendor inventory and add 4 new items
         list.Clear();
-<<<<<<< HEAD
         list.Add(Items.weapons[Return.RandomInt(1, Items.weapons.Count)]);
         list.Add(Items.armors[Return.RandomInt(1, Items.armors.Count)]);
         list.Add(Items.consumableList[Return.RandomInt(1, Items.consumableList.Count)]);
         list.Add(Items.consumableList[Return.RandomInt(1, Items.consumableList.Count)]);
-=======
-        list.Add(Item.weaponList[Return.RandomInt(1, Item.weaponList.Count)]);
-        list.Add(Item.armorList[Return.RandomInt(1, Item.armorList.Count)]);
-        list.Add(Item.consumableList[Return.RandomInt(1, Item.consumableList.Count)]);
-        list.Add(Item.consumableList[Return.RandomInt(1, Item.consumableList.Count)]);
->>>>>>> 4790697ff3bd735185d6e9402c769e3a724b5f9b
         Interact();        
     }
 

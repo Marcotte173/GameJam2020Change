@@ -219,6 +219,15 @@ public class Player : Creature
                 string choice = Return.Option();
                 if (choice == "1") Combat.monsterList[0].TakeDamage(Damage + weapon.effect1 * 2, $"You backstab the {Combat.monsterList[0].name} for {Damage + weapon.effect1 * 2} damage");
                 else if (choice == "2") Combat.monsterList[1].TakeDamage(Damage + weapon.effect1 * 2, $"You backstab the {Combat.monsterList[1].name} for {Damage + weapon.effect1 * 2} damage");
+                else if (choice == "3") Combat.monsterList[2].TakeDamage(Damage + weapon.effect1 * 2, $"You backstab the {Combat.monsterList[2].name} for {Damage + weapon.effect1 * 2} damage");
+                else CastAbility1();
+            }
+            if (Combat.monsterList.Count == 2)
+            {
+                Write.Line(45, 8, "Select your target");
+                string choice = Return.Option();
+                if (choice == "1") Combat.monsterList[0].TakeDamage(Damage + weapon.effect1 * 2, $"You backstab the {Combat.monsterList[0].name} for {Damage + weapon.effect1 * 2} damage");
+                else if (choice == "2") Combat.monsterList[1].TakeDamage(Damage + weapon.effect1 * 2, $"You backstab the {Combat.monsterList[1].name} for {Damage + weapon.effect1 * 2} damage");
                 else CastAbility1();
             }
             else Combat.monsterList[0].TakeDamage(Damage + weapon.effect1 * 2, $"You backstab the {Combat.monsterList[0].name} for {Damage + weapon.effect1 * 2} damage");
