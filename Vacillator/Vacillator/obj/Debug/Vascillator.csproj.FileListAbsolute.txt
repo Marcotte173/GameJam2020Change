@@ -1,0 +1,22 @@
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\bin\Debug\Vacillator.exe.config
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\bin\Debug\Vacillator.exe.manifest
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\bin\Debug\Vacillator.application
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\bin\Debug\Vacillator.exe
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\bin\Debug\Vacillator.pdb
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\obj\Debug\Vascillator.csprojAssemblyReference.cache
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\obj\Debug\Vascillator.csproj.CoreCompileInputs.cache
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\obj\Debug\Vacillator.exe.manifest
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\obj\Debug\Vacillator.application
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\obj\Debug\Vacillator.exe
+C:\Users\Marcotte\Documents\GameJam2020Change\Marburgh 0.9 Sound\Marburgh\obj\Debug\Vacillator.pdb
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\bin\Debug\Vacillator.exe.config
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\bin\Debug\Vacillator.exe.manifest
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\bin\Debug\Vacillator.application
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\bin\Debug\Vacillator.exe
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\bin\Debug\Vacillator.pdb
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\obj\Debug\Vascillator.csprojAssemblyReference.cache
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\obj\Debug\Vascillator.csproj.CoreCompileInputs.cache
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\obj\Debug\Vacillator.exe.manifest
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\obj\Debug\Vacillator.application
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\obj\Debug\Vacillator.exe
+C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\obj\Debug\Vacillator.pdb
