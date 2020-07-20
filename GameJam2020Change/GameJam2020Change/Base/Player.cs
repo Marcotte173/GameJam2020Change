@@ -7,6 +7,7 @@ public class Player:Creature
     public int gold;
     public Item weapon;
     public Item armor;
+    public List<Item> invitory;
         public Player()
     : base()
     {
