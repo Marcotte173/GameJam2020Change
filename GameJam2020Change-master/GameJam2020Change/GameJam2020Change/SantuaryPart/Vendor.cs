@@ -24,9 +24,9 @@ public class Vendor:Room
         Write.KeyPress();
         list.Clear();
         list.Add(Item.weaponList[Return.RandomInt(1, Item.weaponList.Count)]);
-        list.Add(Item.armorList[Return.RandomInt(1, Item.weaponList.Count)]);
-        list.Add(Item.consumableList[Return.RandomInt(1, Item.weaponList.Count)]);
-        list.Add(Item.consumableList[Return.RandomInt(1, Item.weaponList.Count)]);
+        list.Add(Item.armorList[Return.RandomInt(1, Item.armorList.Count)]);
+        list.Add(Item.consumableList[Return.RandomInt(1, Item.consumableList.Count)]);
+        list.Add(Item.consumableList[Return.RandomInt(1, Item.consumableList.Count)]);
         Interact();        
     }
 
