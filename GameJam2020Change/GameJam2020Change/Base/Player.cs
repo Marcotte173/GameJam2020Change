@@ -20,6 +20,7 @@ public class Player:Creature
         crit = 5;
         defence = 0;
         spellpower = 0;
+        gold = 50;
     }
 
     public void Equip(Item e)
