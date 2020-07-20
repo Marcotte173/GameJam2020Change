@@ -15,7 +15,7 @@ public class Caged:Room
         visitedFlavor = "NOT YET" ;
         name = "Room with a Cage"; 
     }
-    internal override void Explore()
+    internal override void ExploreRoom()
     {
         Console.Clear();
         if (visited) Write.Line(visitedFlavor);

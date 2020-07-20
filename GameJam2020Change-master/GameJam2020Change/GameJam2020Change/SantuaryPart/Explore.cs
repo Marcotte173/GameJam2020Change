@@ -19,7 +19,7 @@ public class Explore
                 Console.Clear();
                 Write.Line(40, 20, $"You enter a {currentShell.room.name}");
                 Write.KeyPress();
-                currentShell.room.Explore();
+                currentShell.room.ExploreRoom();
             }
             Navigate();
         }

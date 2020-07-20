@@ -6,7 +6,7 @@ using System.Text;
 
 public class Vendor:Room
 {
-    public static List<Item> list = new List<Item> { };
+    public static List<Equipment> list = new List<Equipment> { };
 
     public Vendor()
     { 
@@ -16,17 +16,17 @@ public class Vendor:Room
 
         name = "Room with a Vendor"; 
     }
-    internal override void Explore()
+    internal override void ExploreRoom()
     {
         Console.Clear();
         if (visited) Write.Line(visitedFlavor);
         else Write.Line(0,10,flavor);
         Write.KeyPress();
         list.Clear();
-        list.Add(Item.weaponList[Return.RandomInt(1, Item.weaponList.Count)]);
-        list.Add(Item.armorList[Return.RandomInt(1, Item.weaponList.Count)]);
-        list.Add(Item.consumableList[Return.RandomInt(1, Item.weaponList.Count)]);
-        list.Add(Item.consumableList[Return.RandomInt(1, Item.weaponList.Count)]);
+        list.Add(Items.weapons[Return.RandomInt(1, Items.weapons.Count)]);
+        list.Add(Items.armors[Return.RandomInt(1, Items.armors.Count)]);
+        list.Add(Items.consumableList[Return.RandomInt(1, Items.consumableList.Count)]);
+        list.Add(Items.consumableList[Return.RandomInt(1, Items.consumableList.Count)]);
         Interact();        
     }
 
@@ -38,7 +38,7 @@ public class Vendor:Room
         Console.SetCursorPosition(0, 6);
         for (int i = 0; i < list.Count; i++)
         {
-            if (Return.HaveGold(list[i].value)) Write.Line("[" + Color.GREEN + (i + 1) + Color.RESET + "] " + Color.GREEN + list[i].name + Color.RESET + " - " + Color.GOLD + list[i].value + Color.RESET);
+            if (Return.HaveGold(list[i].value)) Write.Line("[" + Color.ITEM + (i + 1) + Color.RESET + "] " + Color.ITEM + list[i].name + Color.RESET + " - " + Color.GOLD + list[i].value + Color.RESET);
             else Write.Line(Color.GREY + "[X] " + list[i].name + " - " + list[i].value + Color.RESET);
         }
         Write.Line(0,26,"[0] Leave");
@@ -48,9 +48,9 @@ public class Vendor:Room
             if (Return.HaveGold(list[choice - 1].value))
             {
                 Console.Clear();
-                if (Return.Confirm($"Would you like to purchase the {Color.GREEN + list[choice - 1].name + Color.RESET}?"))
+                if (Return.Confirm($"Would you like to purchase the {Color.ITEM + list[choice - 1].name + Color.RESET}?"))
                 {
-                    Write.Line("The vendor takes your money and give you the " + Color.GREEN + list[choice - 1].name + Color.RESET);
+                    Write.Line("The vendor takes your money and give you the " + Color.ITEM + list[choice - 1].name + Color.RESET);
                     Program.p.gold -= list[choice - 1].value;
                     Program.p.Equip(list[choice - 1]);
                     list.RemoveAt(choice - 1);

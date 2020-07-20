@@ -6,7 +6,7 @@ public class Write
 {
     public static void Line(string text)
     {
-        Console.Write(text+ "\n");
+        Console.Write(text+ "\n" + Color.RESET);
     }
     public static void Line(string colour, string text)
     {
@@ -15,7 +15,7 @@ public class Write
     public static void Line(int x, int y, string text)
     {
         Console.SetCursorPosition(x, y);
-        Console.Write(text);
+        Console.Write(text + Color.RESET);
     }
     
     public static void Line(string colour, int x, int y, string text)
@@ -29,7 +29,7 @@ public class Write
         Console.Write(
             $"{text1}"
             + colour + $"{text2}"
-            + Color.RESET + $"{text3}\n");
+            + Color.RESET + $"{text3}\n" + Color.RESET);
     }
     public static void Line(string colour, int x, int y, string text1, string text2, string text3)
     {
@@ -37,7 +37,7 @@ public class Write
         Console.Write(
             $"{text1}"
             + colour + $"{text2}"
-            + Color.RESET + $"{text3}\n");
+            + Color.RESET + $"{text3}\n" + Color.RESET);
     }
 
     public static void Line(string colour, string colour2, string text1, string text2, string text3, string text4, string text5)
@@ -48,7 +48,7 @@ public class Write
             + $"{text2}"
             + Color.RESET + $"{text3}"
             + colour2 + $"{text4}"
-            + Color.RESET + $"{text5}\n");
+            + Color.RESET + $"{text5}\n" + Color.RESET);
     }   
 
     public static void Line(string colour, string colour2, int x, int y, string text1, string text2, string text3, string text4, string text5)
@@ -60,7 +60,7 @@ public class Write
             + $"{text2}"
             + Color.RESET + $"{text3}"
             + colour2 + $"{text4}"
-            + Color.RESET + $"{text5}\n");
+            + Color.RESET + $"{text5}\n" + Color.RESET);
     }
 
     public static void KeyPress(int x, int y)

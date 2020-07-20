@@ -8,13 +8,14 @@ namespace GameJam2020Change
         public static Player p = new Player();
         public static string name;
         static void Main(string[] args)
-        {            
-            Write.Line(Color.GREEN,40,6," _   _            _ _ _       _              ");
-            Write.Line(Color.GREEN,40,7,"| | | |          (_) | |     | |             ");
-            Write.Line(Color.GREEN,40,8,"| | | | __ _  ___ _| | | __ _| |_ ___  _ __  ");
-            Write.Line(Color.GREEN,40,9,"| | | |/ _` |/ __| | | |/ _` | __/ _ \\| '__| ");
-            Write.Line(Color.GREEN,40,10,"\\ \\_/ / (_| | (__| | | | (_| | || (_) | |    ");
-            Write.Line(Color.GREEN,40,11," \\___/ \\__,_|\\___|_|_|_|\\__,_|\\__\\___/|_|    ");
+        {
+            Color.SetupConsole();
+            Write.Line(Color.HEALTH,40,6," _   _            _ _ _       _              ");
+            Write.Line(Color.HEALTH,40,7,"| | | |          (_) | |     | |             ");
+            Write.Line(Color.HEALTH,40,8,"| | | | __ _  ___ _| | | __ _| |_ ___  _ __  ");
+            Write.Line(Color.HEALTH,40,9,"| | | |/ _` |/ __| | | |/ _` | __/ _ \\| '__| ");
+            Write.Line(Color.HEALTH,40,10,"\\ \\_/ / (_| | (__| | | | (_| | || (_) | |    ");
+            Write.Line(Color.HEALTH,40,11," \\___/ \\__,_|\\___|_|_|_|\\__,_|\\__\\___/|_|    ");
             Write.Line(100, 26, "Version 0.01");
             Write.KeyPress();
             Story();
@@ -44,13 +45,15 @@ namespace GameJam2020Change
             Console.Clear();
             Write.Line($"{name}, Your eyes are steady, facing down your future, but there is a spark deep within your gaze. The spark of...\n");
             Write.Line("[1] You have no real background. This is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an adventurer.\n");
-            if (Manager.mage)    Write.Line(Color.RED, "[2] Flavor to follow. You get a Mage\n");
-            if (Manager.rogue)   Write.Line(Color.RED, "[3] Flavor to follow. You get a Rogue\n");
-            if (Manager.warrior) Write.Line(Color.RED, "[4] Flavor to follow. You get a Warrior\n");
+            if (Manager.mage)    Write.Line(Color.ABILITY, "[2] Flavor to follow. You get a Mage\n");
+            if (Manager.rogue)   Write.Line(Color.ABILITY, "[3] Flavor to follow. You get a Rogue\n");
+            if (Manager.warrior) Write.Line(Color.ABILITY, "[4] Flavor to follow. You get a Warrior\n");
             string choice = Return.Option();
-            if (choice == "2" && Manager.mage) p = new Mage();
-            if (choice == "3" && Manager.rogue) p = new Rogue();
-            if (choice == "4" && Manager.warrior) p = new Warrior();
+            if (choice == "1") p = new Player(Class.None);
+            else if (choice == "2" && Manager.mage) p = new Player(Class.Mage);
+            else if (choice == "3" && Manager.rogue) p = new Player(Class.Rogue);
+            else if (choice == "4" && Manager.warrior) p = new Player(Class.Warrior);
+            else CharacterClass();
             p.name = name;
             Flavor();
             Explore.currentShell = Explore.d.shell[1];
@@ -68,7 +71,7 @@ namespace GameJam2020Change
         {
             Console.Clear();
             Write.Line($"Name: {p.name}");
-            Write.Line($"Class: {p.typeName}");
+            Write.Line($"Class: {p.characterClass}");
             Write.Line($"\nHealth: {p.hp}/{p.maxHp }");
             Write.Line($"Energy: {p.energy}/{p.maxEnergy}");
             Write.Line($"Damage: {p.damage}");

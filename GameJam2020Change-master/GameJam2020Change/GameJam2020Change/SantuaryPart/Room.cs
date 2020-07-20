@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 public enum RoomType {Hallway, Room, Library,  };
 public enum RoomSize {Tiny, Small, Large } ;
@@ -28,23 +29,39 @@ public class Room
         
     }
 
-    internal virtual void Explore()
+    internal virtual void ExploreRoom()
     {
-        //if (IsRoom())
-        //{
-        //    if (Return.RandomInt(1, 101) < 75 + ((int)roomSize * 5)) Summon(2);
-        //    else Alone();
-        //}
         Console.Clear();
-        if (visited) Write.Line(30,20,visitedFlavor);
-        else Write.Line(30,20,flavor);
-        Write.KeyPress();
-        visited = true;
+        if (Return.RandomInt(1, 101) < 75 + ((int)roomSize * 5)) Summon(2);
+        else Alone();
     }
 
     private void Summon(int v)
     {
-        //Summon a monster
+        Console.Clear();
+        int x = 50;
+        int y = 14;
+        Write.Line(x, y - 2, "You are discovered by...");
+        Thread.Sleep(400);
+        int howMany = Return.RandomInt(0, 3);
+        if(howMany == 0)
+        {            
+            int summon1 = Return.RandomInt(0, Monsters.list.Count);
+            Monsters.Summon(Monsters.list[summon1]);
+            Write.Line(x, y, Monsters.list[summon1].summon);
+            int summon2 = Return.RandomInt(0, Monsters.list.Count);
+            Monsters.Summon(Monsters.list[summon2]);
+            Write.Line(x, y + 1, Monsters.list[summon2].summon);
+        }
+        else
+        {
+            int summon1 = Return.RandomInt(0, Monsters.list.Count);
+            Monsters.Summon(Monsters.list[summon1]);
+            Write.Line(x, y, Monsters.list[summon1].summon);
+        }
+        Write.KeyPress(0, 28);
+        Combat.Start();
+        visited = true;
     }
 
     public void Alone()
