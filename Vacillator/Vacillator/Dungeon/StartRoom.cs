@@ -12,7 +12,7 @@ public class StartRoom:Room
         visitedFlavor = "You enter the first room you found in the manor. A pile of bones lay crubled on the ground.\nIt feels like you are walking in circles." ;
         name = "Room with a pile of bones"; 
     }
-    internal override void Explore()
+    internal override void ExploreRoom()
     {
         Console.Clear();
         if (visited) Write.Line(visitedFlavor);
@@ -72,32 +72,27 @@ public class StartRoom:Room
                 }
                 else if(i <6 )
                 {
-                    Write.Line(40,23,"[key ring " + Color.GREEN + "a" + Color.RESET + "dded to inventory]");
+                    Write.Line(40,23,"[key ring " + Color.ITEM + "a" + Color.RESET + "dded to inventory]");
                 }
                 else if(i <9 )
                 {
-                    Write.Line(40,23,"[key ring " + Color.GREEN + "a" + Color.RESET + "dded to in" + Color.GREEN + "n" + Color.RESET + "entory]");
+                    Write.Line(40,23,"[key ring " + Color.ITEM + "a" + Color.RESET + "dded to in" + Color.ITEM + "v" + Color.RESET + "entory]");
                 }
                 else if(i <11 )
                 {
-                    Write.Line(40,23,"[key rin" + Color.GREEN + "g a" + Color.RESET + "dded to in" + Color.GREEN + "n" + Color.RESET + "ent" + Color.GREEN + "or" + Color.RESET + "y]");
+                    Write.Line(40,23,"[key rin" + Color.ITEM + "g a" + Color.RESET + "dded to in" + Color.ITEM + "v" + Color.RESET + "ent" + Color.ITEM + "or" + Color.RESET + "y]");
                 }
                 else if(i <13 )
                 {
-                    Write.Line(40,23,"[" + Color.GREEN + "ke" + Color.RESET + "y ri" + Color.GREEN + "ng add" + Color.RESET + "ed to i" + Color.GREEN + "nn" + Color.RESET + "en" + Color.GREEN + "tory" + Color.RESET + "]");
+                    Write.Line(40,23,"[" + Color.ITEM + "ke" + Color.RESET + "y ri" + Color.ITEM + "ng add" + Color.RESET + "ed to i" + Color.ITEM + "nv" + Color.RESET + "en" + Color.ITEM + "tory" + Color.RESET + "]");
                 }
                 else
                 {
-                    Write.Line(40,23,"[" + Color.GREEN + "key ring added to inventory" + Color.RESET + "]");
+                    Write.Line(40,23,"[" + Color.ITEM + "key ring added to inventory" + Color.RESET + "]");
                 }
             }
             Write.KeyPress();
-
-        }
-        Write.KeyPress();
-        visited = true;
-        
+            visited = true;
+        }        
     }
-   
-
 }

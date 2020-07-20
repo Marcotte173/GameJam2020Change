@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vacillator.exe" size="41472">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vacillator.exe" size="47616">
       <assemblyIdentity name="Vacillator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GWNdC5ocGjuvPXGe94HmCJzrFd6FTA7ElWhMUa0OiIU=</dsig:DigestValue>
+        <dsig:DigestValue>xmB4UJLeWh5uNy/h/O6rqTxKUHdTlCwrRdBJ65Sri9o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
