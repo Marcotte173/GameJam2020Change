@@ -11,7 +11,7 @@ public class Explore
     public static void Start()
     {
         Console.Clear();
-        Navigate();
+        //Navigate();
         while (true)
         {
             if (currentShell.room.visited == false)
