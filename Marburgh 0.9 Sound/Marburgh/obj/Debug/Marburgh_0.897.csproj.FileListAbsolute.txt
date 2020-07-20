@@ -1,0 +1,11 @@
+C:\Marburgh 0.897\Marburgh\bin\Debug\Marburgh.exe.config
+C:\Marburgh 0.897\Marburgh\bin\Debug\Marburgh.exe.manifest
+C:\Marburgh 0.897\Marburgh\bin\Debug\Marburgh.application
+C:\Marburgh 0.897\Marburgh\bin\Debug\Marburgh.exe
+C:\Marburgh 0.897\Marburgh\bin\Debug\Marburgh.pdb
+C:\Marburgh 0.897\Marburgh\obj\Debug\Marburgh_0.897.csprojAssemblyReference.cache
+C:\Marburgh 0.897\Marburgh\obj\Debug\Marburgh_0.897.csproj.CoreCompileInputs.cache
+C:\Marburgh 0.897\Marburgh\obj\Debug\Marburgh.exe.manifest
+C:\Marburgh 0.897\Marburgh\obj\Debug\Marburgh.application
+C:\Marburgh 0.897\Marburgh\obj\Debug\Marburgh.exe
+C:\Marburgh 0.897\Marburgh\obj\Debug\Marburgh.pdb
