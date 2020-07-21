@@ -76,7 +76,6 @@ public class Return
         info[6]  = "Weapon : " + Color.ITEM + Program.p.weapon.name;
         info[7]  = "Armor  : " + Color.ITEM + Program.p.armor.name;
         info[11] = "Gold   : " + Color.GOLD + Program.p.gold;
-        Program.p.Equip(Items.apple);
         items.Clear();
         items.Add(Color.ITEM + "Inventory"+ Color.RESET);
         items.Add("");
