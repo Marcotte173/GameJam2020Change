@@ -4,9 +4,7 @@ using System.Text;
 using System.Threading;
 
 public class StartRoom:Room
-
-{
-    
+{    
     public StartRoom()
     { 
         visitedFlavor = "You enter the first room you found in the manor. A pile of bones lay crubled on the ground.\nIt feels like you are walking in circles." ;
@@ -91,6 +89,7 @@ public class StartRoom:Room
                     Write.Line(40,23,"[" + Color.ITEM + "key ring added to inventory" + Color.RESET + "]");
                 }
             }
+            Return.ClassAdd();
             Write.KeyPress();
             visited = true;
         }        

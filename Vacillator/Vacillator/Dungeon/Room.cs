@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameJam2020Change;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
@@ -97,7 +98,44 @@ public class Room
         Console.Clear();
         Console.Write("Searching");
         Write.DotDotDotSL();
-        Write.Line(0, 8, "You find some stuff");
+        int whatDoIFind = Return.RandomInt(0, 20);
+        if (whatDoIFind < 6) Write.Line(0, 8, "You find nothing!");
+        else if (whatDoIFind < 17)
+        {
+            int gold = Return.RandomInt(10, 30);
+            int xp = Return.RandomInt(3, 10);
+            Write.Line(0, 8, "You find gold and an old book!");
+            Write.KeyPress();
+            Console.Clear();
+            Write.Line($"You find {gold} gold and an old book. Reading the book gives you {xp} experience");
+        }
+        else
+        {
+            Write.Line(0, 8, "You find an Item!");
+            int itemRoll = Return.RandomInt(0, 5);
+            Equipment e = Items.noWeapon;
+            if (itemRoll < 3) e = Items.consumableList[Return.RandomInt(1,Items.consumableList.Count)];
+            if (itemRoll == 3) e = Items.armors[Return.RandomInt(1, Items.armors.Count)];
+            else e = Items.weapons[Return.RandomInt(1, Items.weapons.Count)];
+            Write.KeyPress();
+            Console.Clear();
+            if(e.type != EquipmentType.Consumable)
+            {
+                if(Return.Confirm($"You find a {e.name}. Would you like to equip it?"))
+                {
+                    Write.Line($"\n\nYou equip the {e.name}");
+                    Program.p.Equip(e);
+                }                
+            }
+            else
+            {
+                if (Return.Confirm($"You find a {e.name}. Would you pick it up?"))
+                {
+                    Write.Line($"\n\nYou pick up the {e.name}");
+                    Program.p.Equip(e);
+                }
+            }
+        }
         Write.KeyPress();
     }
 

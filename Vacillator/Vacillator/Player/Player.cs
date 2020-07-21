@@ -68,7 +68,7 @@ public class Player : Creature
     public bool canExplore;
     public Equipment weapon;
     public Equipment armor;
-    public List<Equipment> inventory;
+    public List<Equipment> inventory = new List<Equipment> { };
     public Player() { }
     public Player(Class characterClass)
     : base()
@@ -144,7 +144,11 @@ public class Player : Creature
     {
         //UI Telling you what happened
         if (e.type == EquipmentType.Weapon) weapon = e.Copy();
-        else if (e.type == EquipmentType.Consumable) inventory.Add(e.Copy());
+        else if (e.type == EquipmentType.Consumable)
+        {
+            inventory.Add(e.Copy());
+            Return.items.Add(e.name);
+        }
         else armor = e.Copy();
 
     }

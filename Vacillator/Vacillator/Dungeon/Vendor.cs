@@ -18,6 +18,7 @@ public class Vendor : Room
     internal override void ExploreRoom()
     {
         Console.Clear();
+        Return.ItemAdd();
         if (visited) Write.Line(visitedFlavor);
         else Write.Line(0, 10, flavor);
         Write.KeyPress();
@@ -33,8 +34,9 @@ public class Vendor : Room
 
     public void Interact()
     {
-        Console.Clear();
+        Console.Clear();        
         Write.Line("The Vendor stands before you.\n\n'What can I interest you in?'\n\n");
+        Return.PlayerInfo();
         Console.SetCursorPosition(0, 6);
         //write availible items, green if buyable, grey if not
         for (int i = 0; i < list.Count; i++)
@@ -42,7 +44,7 @@ public class Vendor : Room
             if (Return.HaveGold(list[i].value)) Write.Line("[" + Color.ITEM + (i + 1) + Color.RESET + "] " + Color.ITEM + list[i].name + Color.RESET + " - " + Color.GOLD + list[i].value + Color.RESET);
             else Write.Line(Color.GREY + "[X] " + list[i].name + " - " + list[i].value + Color.RESET);
         }
-        Write.Line(0, 26, "[0] Leave");
+        Write.Line(0, 28, "[0] Leave");
         //input and check if buyable, then equipt(change to add to invintory?)
         int choice = Return.Int();
         if (choice > 0 && choice < list.Count)

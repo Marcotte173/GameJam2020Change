@@ -7,4 +7,5 @@ public class Manager
     public static bool mage;
     public static bool rogue;
     public static bool warrior;
+    public int coreRooms;
 }

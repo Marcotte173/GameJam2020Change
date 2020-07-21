@@ -13,6 +13,7 @@ public class Combat
 
     public static void Start()
     {
+        Return.HealthEnergyAdd();
         CombatLoop();
     }
     public static void CombatLoop()
@@ -64,16 +65,16 @@ public class Combat
             Write.Line(25, 1, "[1] " + monsterList[0].name);
             Write.Line(25, 2, "Health " + monsterList[0].hp + " / " + monsterList[0].maxHp);
             Write.Line(50, 1, "[2] " + monsterList[1].name);
-            Write.Line(50, 2, "Health " + monsterList[1].hp + " / " + monsterList[0].maxHp);
-            Write.Line(75, 1, "[3] " + monsterList[1].name);
-            Write.Line(75, 2, "Health " + monsterList[1].hp + " / " + monsterList[0].maxHp);
+            Write.Line(50, 2, "Health " + monsterList[1].hp + " / " + monsterList[1].maxHp);
+            Write.Line(75, 1, "[3] " + monsterList[2].name);
+            Write.Line(75, 2, "Health " + monsterList[2].hp + " / " + monsterList[2].maxHp);
         }
         if (monsterList.Count == 2)
         {
             Write.Line(35, 1, "[1] " + monsterList[0].name);
             Write.Line(35, 2, "Health " + monsterList[0].hp + " / " + monsterList[0].maxHp);
             Write.Line(65, 1, "[2] " + monsterList[1].name);
-            Write.Line(65, 2, "Health " + monsterList[1].hp + " / " + monsterList[0].maxHp);
+            Write.Line(65, 2, "Health " + monsterList[1].hp + " / " + monsterList[1].maxHp);
         }
         else
         {
@@ -84,10 +85,7 @@ public class Combat
 
     private static void PlayerAttack()
     {
-        Write.Line(0, 17, "Name   : " + Color.NAME + GameJam2020Change.Program.p.name);
-        Write.Line(0, 18, "Class  : " + Color.ABILITY + GameJam2020Change.Program.p.characterClass);
-        Write.Line(0, 19, "Health : " + Color.HEALTH + GameJam2020Change.Program.p.hp + Color.RESET + " / " + Color.HEALTH + GameJam2020Change.Program.p.maxHp);
-        Write.Line(0, 20, "Energy : " + Color.ENERGY + GameJam2020Change.Program.p.energy + Color.RESET + " / " + Color.ENERGY + GameJam2020Change.Program.p.maxEnergy);
+        Return.PlayerInfo();
         Write.Line(0, 22, "[1]" + Color.DAMAGE + " Attack   ");
         if (Return.HaveEnergy(1)) Write.Line(0, 23, "[2] " + Color.ABILITY + player.abilityName1);
         else Write.Line(0, 23, "[X] " + Color.GREY + "Not enough energy");
@@ -123,7 +121,6 @@ public class Combat
         {
             Console.Clear();
             Write.Line("Displaying shocking cowardice, you run as fast as you can\n");
-            Write.Line("You escape with your life, but have to start all over");
             Write.KeyPress();
             Explore.Start();
         }
@@ -133,6 +130,15 @@ public class Combat
 
     private static void BasicAttack()
     {
+        if (monsterList.Count == 3)
+        {
+            Write.Line(45, 8, "Select your target");
+            string choice = Return.Option();
+            if (choice == "1") player.BasicAttack(monsterList[0]);
+            else if (choice == "2") player.BasicAttack(monsterList[1]);
+            else if (choice == "3") player.BasicAttack(monsterList[2]);
+            else BasicAttack();
+        }
         if (monsterList.Count == 2)
         {
             Write.Line(45, 8, "Select your target");
