@@ -1,4 +1,5 @@
-﻿using System;
+using GameJam2020Change;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -28,6 +29,12 @@ public class Caged : Room
 
     public void Interact()
     {
+        foreach (Equipment item in Program.p.inventory)
+        {
+            if (item.type == EquipmentType.Consumable) haveFood = true;
+        }
+
+
         Console.Clear();
         if (!visited)
         {
@@ -43,6 +50,11 @@ public class Caged : Room
 
         if (choice == "f" && !visited)
         {
+            foreach (Equipment item in Program.p.inventory)
+            {
+                if (item.type == EquipmentType.Consumable) Program.p.inventory.Remove(item);
+            }
+            
             Console.Clear();
             Write.Line(40, 20, "Hungry Boi Eat");
             Write.KeyPress();
