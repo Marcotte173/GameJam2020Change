@@ -63,34 +63,42 @@ public class StartRoom:Room
             Write.Line(10,12,"You gained a keyring!");
             for(int i = 0; i < 14; i++)
             {
+                
+                if(i == 0 )
+                {
+                    Write.Line(40,23,"[keyring added to inventory]");
+                }
+                else if(i == 4 )
+                {
+                    Write.Line(40,23,"[keyring " + Color.ITEM + "a" + Color.RESET + "dded to inventory]");
+                    Sound.PlayOnce("complexbeep");
+                }
+                else if(i ==6 )
+                {
+                    Write.Line(40,23,"[keyring " + Color.ITEM + "a" + Color.RESET + "dded to in" + Color.ITEM + "v" + Color.RESET + "entory]");
+                    Sound.PlayOnce("complexbeep");
+                }
+                else if(i ==9 )
+                {
+                    Write.Line(40,23,"[keyrin" + Color.ITEM + "g a" + Color.RESET + "dded to in" + Color.ITEM + "v" + Color.RESET + "ent" + Color.ITEM + "or" + Color.RESET + "y]");
+                    Sound.PlayOnce("complexbeep");
+                }
+                else if(i ==11 )
+                {
+                    Write.Line(40,23,"[" + Color.ITEM + "ke" + Color.RESET + "yri" + Color.ITEM + "ng add" + Color.RESET + "ed to i" + Color.ITEM + "nv" + Color.RESET + "en" + Color.ITEM + "tory" + Color.RESET + "]");
+                    Sound.PlayOnce("complexbeep");
+                }
                 Thread.Sleep(300);
-                if(i <4 )
-                {
-                    Write.Line(40,23,"[key ring added to inventory]");
-                }
-                else if(i <6 )
-                {
-                    Write.Line(40,23,"[key ring " + Color.ITEM + "a" + Color.RESET + "dded to inventory]");
-                }
-                else if(i <9 )
-                {
-                    Write.Line(40,23,"[key ring " + Color.ITEM + "a" + Color.RESET + "dded to in" + Color.ITEM + "v" + Color.RESET + "entory]");
-                }
-                else if(i <11 )
-                {
-                    Write.Line(40,23,"[key rin" + Color.ITEM + "g a" + Color.RESET + "dded to in" + Color.ITEM + "v" + Color.RESET + "ent" + Color.ITEM + "or" + Color.RESET + "y]");
-                }
-                else if(i <13 )
-                {
-                    Write.Line(40,23,"[" + Color.ITEM + "ke" + Color.RESET + "y ri" + Color.ITEM + "ng add" + Color.RESET + "ed to i" + Color.ITEM + "nv" + Color.RESET + "en" + Color.ITEM + "tory" + Color.RESET + "]");
-                }
-                else
-                {
-                    Write.Line(40,23,"[" + Color.ITEM + "key ring added to inventory" + Color.RESET + "]");
-                }
+
             }
-            Return.ClassAdd();
+
+            Write.Line(40, 23, "[" + Color.ITEM + "keyring added to inventory" + Color.RESET + "]");
+            Sound.PlayOnce("complexbeep");
             Write.KeyPress();
+            Sound.PlayOnce("confirm");
+
+            Return.ClassAdd();
+
             visited = true;
         }        
     }
