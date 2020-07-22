@@ -1,4 +1,4 @@
-﻿using GameJam2020Change;
+using GameJam2020Change;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,8 +19,17 @@ public class Vendor : Room
     {
         Console.Clear();
         Return.ItemAdd();
-        if (visited) Write.Line(visitedFlavor);
-        else Write.Line(0, 10, flavor);
+        if (!visited)
+        {
+            Write.Line(5,5,"You step into a dimly lit room, the smell of damp age is quickly replaced");
+            Write.Line(5, 6, "by the sour musk of someone who could not spell the word “soap” and likely has never used it either.");
+            Write.Line(5, 8, "Hooow aaare youuuu? Wellllcome toooo Muuuurchaunt shooop.I’m Murchaunt,");
+            Write.Line(5, 9, "aaaand Muuuurchaunt heeere to seeellll youuu allll");
+            Write.Line(5, 10, "the thiiings Muuurchaunt haave fooound in thiiiiiis heeere hoooouse.");
+            Write.Line(5, 12, "You look around and see a few items out for sale.");
+            visited = true;
+        }
+        else Write.Line(5, 10, visitedFlavor);
         Write.KeyPress();
         //clear vendor inventory and add 4 new items
         list.Clear();
@@ -35,7 +44,7 @@ public class Vendor : Room
     public void Interact()
     {
         Console.Clear();        
-        Write.Line("The Vendor stands before you.\n\n'What can I interest you in?'\n\n");
+        Write.Line("The Vendor stands before you.\n\n'Whaaaat caaan I intereeeeeest youuuuu iiiin?'\n\n");
         Return.PlayerInfo();
         Console.SetCursorPosition(0, 6);
         //write availible items, green if buyable, grey if not
@@ -55,6 +64,7 @@ public class Vendor : Room
                 if (Return.Confirm($"Would you like to purchase the {Color.ITEM + list[choice - 1].name + Color.RESET}?"))
                 {
                     Write.Line("The vendor takes your money and give you the " + Color.ITEM + list[choice - 1].name + Color.RESET);
+                    Write.Line(0,7, list[choice - 1].value< 400? "'Wiiith a puuuurchaaaase of 100000 youuuu caaaan get aaa baaag of liiiizard toooungs FREEEEEE!'" : list[choice - 1].value < 1000 ? "'Leeeet Muuurchaunt knoooow if youuuu need moooore of thooose!'" : "'Keeeeep paaaaaying Muuurchaunt liiike thaaat and Muuuuurchaunt wont haaaave toooo seelllll nooo moore!'");
                     Program.p.gold -= list[choice - 1].value;
                     Program.p.Equip(list[choice - 1]);
                     list.RemoveAt(choice - 1);
