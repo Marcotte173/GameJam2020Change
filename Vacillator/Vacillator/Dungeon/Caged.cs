@@ -20,7 +20,14 @@ public class Caged : Room
     {
         Console.Clear();
         if (visited) Write.Line(visitedFlavor);
-        else Write.Line(0, 10, flavor);
+        else
+        {
+            Write.Line(10, 10, "You walk into a room that has a skylight coming from the ceiling,");
+            Write.Line(10, 11, "illuminating a domelike cage bolted into the ground. it is too small for what it contains.");
+            Write.Line(10, 12, "Inside sits a person, or at least you think it is a person.");
+            Write.Line(10, 13, "They are sitting on the floor, clutching their knees, looking at the floor, and mumbling.");
+            Write.Line(10, 14, "They look at you, and then at your keys, and then look back down at the ground.");
+        }
         Write.KeyPress();
         Interact();
 
@@ -56,17 +63,21 @@ public class Caged : Room
                 {
                     Program.p.inventory.Remove(item);
                     Console.Clear();
-                    Write.Line(40, 20, "Hungry Boi Eat");
+                    Write.Line(10, 20, "He takes the food gingerly in his hands. He consumes it, savoring it. He then sits, pleased, qiuet.");
                     Write.KeyPress();
                     visitedFlavor = "You enter a room with the prisoner who is fed.\nHe smiles.";
                     visited = true;
+                    break;
                 }
             }
+            
+            
         }
         else if (choice == "r" && !visited)
         {
             Console.Clear();
-            Write.Line(40, 20, "He run away");
+            Write.Line(10, 20, "The thing stands and bolts out of the cage. His legs carry him at an unatural pace");
+            Write.Line(10, 21, "You hear what you think are his screams as he goes down the halls of Vacilators Mansion");
             Write.KeyPress();
             visitedFlavor = "You enter a room with an empty cage.\nThe prisoner is gone";
             visited = true;
@@ -74,7 +85,8 @@ public class Caged : Room
         else if (choice == "k" && !visited)
         {
             Console.Clear();
-            Write.Line(40, 20, "oh boi he ded");
+            Write.Line(10, 20, "You think this thing must be in here for a reason. You take it uppon yourself to end their suffering.");
+            Write.Line(10, 21, "with the softest touch of a weapon, the thing collapses and gushes blood. It is dead.");
             Write.KeyPress();
             visitedFlavor = "You enter a room with a cage and a corpse.\nThe corpse has aged so much";
             visited = true;
@@ -85,6 +97,5 @@ public class Caged : Room
             Write.Line(40, 20, "You head back out the door");
             Write.KeyPress();
         }
-        
     }
 }
