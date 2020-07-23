@@ -45,7 +45,7 @@ public class Dungeon
         int core2Roll = Return.RandomInt(13, 17);
         int core3Roll = Return.RandomInt(20, 25);
         shell[core1Roll].room = new Caged();
-        shell[core2Roll].room = new Core2();
-        shell[core3Roll].room = new Core3();
+        shell[core2Roll].room = new Shock();
+        shell[core3Roll].room = new Loot();
     }
 }
