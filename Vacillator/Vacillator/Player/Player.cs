@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameJam2020Change;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -67,25 +68,19 @@ public class Player : Creature
     public int spellpowerBonus;
     public int energyBonus;
     public int potion;
-    public int maxPotion;
-    public int potionLevel;
-    public int[] potionHp = new int[] { 0, 10, 15, 20, 25 };
-    public int[] potionPrice = new int[] { 0, 200, 300, 500, 600, 700 };
     public bool ability1;
     public bool ability2;
     public string abilityName1;
     public string abilityName2;
-    public bool canExplore;
     public Equipment weapon;
     public Equipment armor;
+    public List<Equipment> consumables = new List<Equipment> { };
     public List<Equipment> inventory = new List<Equipment> { };
     public Player() { }
     public Player(Class characterClass)
     : base()
     {
-        canExplore = true;
-        potionLevel = 1;
-        potion = maxPotion = potionHp[potionLevel];
+        potion = 25;
         this.characterClass = characterClass;
         gold = 200;
         level = 1;
@@ -158,8 +153,16 @@ public class Player : Creature
         if (e.type == EquipmentType.Weapon) weapon = e.Copy();
         else if (e.type == EquipmentType.Consumable)
         {
-            inventory.Add(e.Copy());
-            Return.items.Add(e.name);
+            if (e.name == "Potion")
+            {
+                Write.Line("Your potion is refilled to 25");
+                Program.p.potion = 25;
+            }
+            else
+            {
+                consumables.Add(e.Copy());
+                Return.items.Add(e.name);
+            }
         }
         else armor = e.Copy();
 
@@ -291,8 +294,7 @@ public class Player : Creature
     {
         hp = maxHp;
         energy = maxEnergy;
-        potion = maxPotion;
-        canExplore = true;
+        potion = 25;
     }
 
     public int Mitigation { get { return mitigation + armor.effect2 + mitigationBonus; } }

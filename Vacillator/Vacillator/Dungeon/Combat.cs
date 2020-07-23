@@ -95,8 +95,9 @@ public class Combat
         else if (Program.p.level<3) Write.Line(0, 24, "[X]" + Color.GREY + " Unlocked at Level 3");
         else if (Return.HaveEnergy(2)) Write.Line(0, 24, "[3] " + Color.ABILITY + player.abilityName1);
         else Write.Line(0, 24, "[X] " + Color.GREY + "Not enough energy");
-        Write.Line(0, 25, "[X]" + Color.GREY + " Not Implemented");
-        if (player.hp != player.maxHp && player.potion > 0) Write.Line(0, 26, "[5] Healing Potion  " + Color.ITEM + player.potion + Color.RESET + " / " + Color.ITEM + player.maxPotion);
+        if(Program.p.consumables.Count == 0)Write.Line(0, 25, "[X]" + Color.GREY + " No Consumables");
+        else 
+        if (player.hp != player.maxHp && player.potion > 0) Write.Line(0, 26, "[5] Healing Potion  " + Color.ITEM + player.potion + Color.RESET);
         else if (player.potion < 1) Write.Line(0, 26, "[X]" + Color.GREY + " You are out of Healing Potion");
         else Write.Line(0, 26, "[X]" + Color.GREY + " You don't need healing");
         Write.Line(0, 28, "[0] Run");

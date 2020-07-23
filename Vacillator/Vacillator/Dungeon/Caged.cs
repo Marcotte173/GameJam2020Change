@@ -29,12 +29,7 @@ public class Caged : Room
 
     public void Interact()
     {
-        foreach (Equipment item in Program.p.inventory)
-        {
-            if (item.type == EquipmentType.Consumable) haveFood = true;
-        }
-
-
+        if (Program.p.consumables.Count >0) haveFood = true;
         Console.Clear();
         if (!visited)
         {
@@ -48,20 +43,14 @@ public class Caged : Room
         Write.Line(55, 28, "[L]eave - ");
         string choice = Return.Option();
 
-        if (choice == "f" && !visited)
+        if (choice == "f" && !visited && haveFood)
         {
-            foreach (Equipment item in Program.p.inventory)
-            {
-                if (item.type == EquipmentType.Consumable)
-                {
-                    Program.p.inventory.Remove(item);
-                    Console.Clear();
-                    Write.Line(40, 20, "Hungry Boi Eat");
-                    Write.KeyPress();
-                    visitedFlavor = "You enter a room with the prisoner who is fed.\nHe smiles.";
-                    visited = true;
-                }
-            }
+            Program.p.consumables.RemoveAt(0);
+            Console.Clear();
+            Write.Line(40, 20, "Hungry Boi Eat");
+            Write.KeyPress();
+            visitedFlavor = "You enter a room with the prisoner who is fed.\nHe smiles.";
+            visited = true;
         }
         else if (choice == "r" && !visited)
         {
@@ -84,7 +73,6 @@ public class Caged : Room
             Console.Clear();
             Write.Line(40, 20, "You head back out the door");
             Write.KeyPress();
-        }
-        
+        }        
     }
 }
