@@ -51,6 +51,7 @@ namespace GameJam2020Change
         private static void CharacterClass()
         {
             Console.Clear();
+            Manager.mage = true;
             Write.Line($"{name}, Your eyes are steady, facing down your future, but there is a spark deep within your gaze. The spark of...\n");
             Write.Line("[1] The Mundane\n\nYou have no real background. This is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an "+Color.SPEAK + "adventurer.\n");
             if (Manager.mage) Write.Line("[2] The " + Color.ENERGY + "Arcane" + Color.RESET + "\n\nThis is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an " + Color.ABILITY + "Mage.\n");

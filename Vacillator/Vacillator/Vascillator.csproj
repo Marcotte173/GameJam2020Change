@@ -74,7 +74,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dungeon\BossRoom.cs" />
     <Compile Include="Dungeon\Caged.cs" />
+    <Compile Include="Dungeon\Core2.cs" />
+    <Compile Include="Dungeon\Core3.cs" />
     <Compile Include="Utilities\Color.cs" />
     <Compile Include="Dungeon\Combat.cs" />
     <Compile Include="Player\Creature.cs" />

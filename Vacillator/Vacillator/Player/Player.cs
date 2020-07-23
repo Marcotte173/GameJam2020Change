@@ -12,8 +12,18 @@ public class Player : Creature
     public int spellPower;
     public int[] levelXp = new int[] { 0, 20, 50, 90, 140, 200 };
     public int level;
-    public int[] wBaseDamage = { 0, 3, 6, 10 };
-    public int[] wBaseHp = { 0, 22, 30, 38 };
+
+    public int[] aBaseDamage = { 0,  3,  6, 10 };
+    public int[] wBaseDamage = { 0,  3,  6, 10 };    
+    public int[] mBaseDamage = { 0,  3,  6,  9 };
+    public int[] rBaseDamage = { 0,  4,  8, 13 };
+
+    public int[] aBaseHp =     { 0, 50, 23, 31 };
+    public int[] wBaseHp =     { 0, 60, 30, 38 };
+    public int[] mBaseHp =     { 0, 45, 22, 30 };    
+    public int[] rBaseHp =     { 0, 50, 24, 32 };
+
+
     public int[] wBaseEnergy = { 0, 2, 2, 3 };
     public int[] wBaseSpellpower = { 0, 0, 0, 0 };
     public int[] wBaseDefence = { 0, 5, 12, 18 };
@@ -21,8 +31,8 @@ public class Player : Creature
     public int[] wBaseCrit = { 0, 5, 6, 7 };
     public int[] wBaseMitigation = { 0, 1, 3, 4 };
 
-    public int[] aBaseDamage = { 0, 3, 6, 10 };
-    public int[] aBaseHp = { 0, 17, 23, 31 };
+    
+    
     public int[] aBaseEnergy = { 0, 0, 0, 0 };
     public int[] aBaseSpellpower = { 0, 0, 0, 0 };
     public int[] aBaseDefence = { 0, 5, 10, 15 };
@@ -30,8 +40,8 @@ public class Player : Creature
     public int[] aBaseCrit = { 0, 5, 6, 7 };
     public int[] aBaseMitigation = { 0, 1, 2, 3 };
 
-    public int[] rBaseDamage = { 0, 4, 8, 13 };
-    public int[] rBaseHp = { 0, 18, 24, 32 };
+    
+    
     public int[] rBaseEnergy = { 0, 2, 2, 3 };
     public int[] rBaseSpellpower = { 0, 0, 0, 0 };
     public int[] rBaseDefence = { 0, 5, 10, 15 };
@@ -39,8 +49,8 @@ public class Player : Creature
     public int[] rBaseCrit = { 0, 5, 8, 11 };
     public int[] rBaseMitigation = { 0, 1, 2, 3 };
 
-    public int[] mBaseDamage = { 0, 3, 6, 9 };
-    public int[] mBaseHp = { 0, 16, 22, 30 };
+    
+    
     public int[] mBaseEnergy = { 0, 3, 3, 4 };
     public int[] mBaseSpellpower = { 0, 1, 2, 2 };
     public int[] mBaseDefence = { 0, 5, 10, 15 };
@@ -127,16 +137,18 @@ public class Player : Creature
         }
         else if (characterClass == Class.Adventurer)
         {
-            hp = maxHp = mBaseHp[level];
-            damage = mBaseDamage[level];
-            energy = maxEnergy = mBaseEnergy[level];
-            spellPower = mBaseSpellpower[level];
-            defence = mBaseDefence[level];
-            hit = mBaseHit[level];
-            crit = mBaseCrit[level];
-            mitigation = mBaseMitigation[level];
+            hp = maxHp = aBaseHp[level];
+            damage = aBaseDamage[level];
+            energy = maxEnergy = aBaseEnergy[level];
+            spellPower = aBaseSpellpower[level];
+            defence = aBaseDefence[level];
+            hit = aBaseHit[level];
+            crit = aBaseCrit[level];
+            mitigation = aBaseMitigation[level];
             weapon = Items.noWeapon.Copy();
             armor = Items.noArmor.Copy();
+            abilityName1 = "Adventurers have no abilities";
+            abilityName1 = "Adventurers have no abilities";
         }
     }
 

@@ -31,12 +31,7 @@ public class Vendor : Room
         }
         else Write.Line(5, 10, visitedFlavor);
         Write.KeyPress();
-        //clear vendor inventory and add 4 new items
-        list.Clear();
-        list.Add(Items.weapons[Return.RandomInt(1, Items.weapons.Count)]);
-        list.Add(Items.armors[Return.RandomInt(1, Items.armors.Count)]);
-        list.Add(Items.consumableList[Return.RandomInt(1, Items.consumableList.Count)]);
-        list.Add(Items.consumableList[Return.RandomInt(1, Items.consumableList.Count)]);
+        
         Interact();
     }
 
@@ -74,5 +69,15 @@ public class Vendor : Room
             Interact();
         }
         else if (choice < 0 || choice > list.Count) Interact();
+    }
+
+    public void Restock()
+    {
+        //clear vendor inventory and add 4 new items
+        list.Clear();
+        list.Add(Items.weapons[Return.RandomInt(1, Items.weapons.Count)]);
+        list.Add(Items.armors[Return.RandomInt(1, Items.armors.Count)]);
+        list.Add(Items.consumableList[Return.RandomInt(1, Items.consumableList.Count)]);
+        list.Add(Items.consumableList[Return.RandomInt(1, Items.consumableList.Count)]);
     }
 }

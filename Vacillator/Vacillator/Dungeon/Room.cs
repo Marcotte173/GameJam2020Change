@@ -36,9 +36,9 @@ public class Room
         Write.Line(40, 20, $"You enter a {Explore.currentShell.room.name}");
         Write.KeyPress();
         Console.Clear();
-        if (Return.RandomInt(1, 101) < 10 + ((int)roomSize * 5)) Summon(3);
-        else if (Return.RandomInt(1, 101) < 40 + ((int)roomSize * 5)) Summon(2);
-        else if (Return.RandomInt(1, 101) < 80 + ((int)roomSize * 5)) Summon(1);
+        int summonRoll = Return.RandomInt(1, 101);
+        if (summonRoll < 35 + ((int)roomSize * 5)) Summon(2);
+        else if (summonRoll < 80 + ((int)roomSize * 5)) Summon(1);
         else Alone();
     }
 
@@ -63,12 +63,14 @@ public class Room
             int summon1 = Return.RandomInt(0, Monsters.list.Count);
             Monsters.Summon(Monsters.list[summon1]);
             Write.Line(x, y, Monsters.list[summon1].summon);
+            
             int summon2 = Return.RandomInt(0, Monsters.list.Count);
             Monsters.Summon(Monsters.list[summon2]);
             Write.Line(x, y + 1, Monsters.list[summon2].summon);
+            
             int summon3 = Return.RandomInt(0, Monsters.list.Count);
             Monsters.Summon(Monsters.list[summon3]);
-            Write.Line(x, y, Monsters.list[summon3].summon);
+            Write.Line(x, y + 2, Monsters.list[summon3].summon);
         }
         else
         {
@@ -78,6 +80,7 @@ public class Room
         }
         Write.KeyPress(0, 28);
         visited = true;
+        Manager.Vendor();
         Combat.Start();
     }
 
@@ -88,7 +91,11 @@ public class Room
         Write.Line(0, 25, "[S]earch the room");
         Write.Line(0, 26, "[M]ove on");
         string choice = Return.Option();
-        if (choice == "m") visited = true;
+        if (choice == "m")
+        {
+            visited = true;
+            Manager.Vendor();
+        }
         else if (choice == "s") RoomSearch();
         else Alone();
     }
@@ -137,6 +144,25 @@ public class Room
             }
         }
         Write.KeyPress();
+        Console.Clear();
+        Console.Write("You were searching for a while, did anyone hear you?");
+        Write.DotDotDotSL();
+        int summonRoll = Return.RandomInt(1, 101);
+        if (summonRoll > 80)
+        {
+            Write.Line(0, 10, "Phew, You got Lucky");
+            Write.KeyPress();
+        }
+        else if (summonRoll < 30 + ((int)roomSize * 5))
+        {
+            Write.Line(0, 10, "Someone heard you! They're coming to investigate.\nSounds like there's a lot of them!");
+            Summon(3);
+        }
+        else
+        {
+            Write.Line(0, 10, "Someone heard you! They're coming to investigate.");
+            Summon(2);
+        }        
     }
 
     public bool IsHallway() => roomType == RoomType.Hallway;

@@ -8,6 +8,8 @@ public class Return
     public static string[] info = new string[12];
     public static List<string> items = new List<string> {};
     static Random rand = new Random();
+    public static bool item;
+    public static bool health;
     internal static string String() => Console.ReadLine();
     public static bool Confirm(string choice)
     {
@@ -41,6 +43,21 @@ public class Return
 
     internal static void PlayerInfo()
     {
+        if (health)
+        {
+            info[3] = "Health : " + Color.HEALTH + Program.p.hp + Color.RESET + " / " + Color.HEALTH + Program.p.maxHp;
+            info[4] = "Energy : " + Color.ENERGY + Program.p.energy + Color.RESET + " / " + Color.ENERGY + Program.p.maxEnergy;
+        }
+        if (item)
+        {
+            info[6] = "Weapon : " + Color.ITEM + Program.p.weapon.name;
+            info[7] = "Armor  : " + Color.ITEM + Program.p.armor.name;
+            info[11] = "Gold   : " + Color.GOLD + Program.p.gold;
+            items.Clear();
+            items.Add(Color.ITEM + "Inventory" + Color.RESET);
+            items.Add("");
+            foreach (Equipment e in Program.p.inventory) items.Add(e.name);
+        }
         for (int i = 0; i < info.Length; i++)
         {
             Write.Line(70, 16 + i, info[i]);
@@ -53,6 +70,10 @@ public class Return
             }
         }        
     }
+    internal static void NameAdd()
+    {
+        info[0] = "Name   : " + Color.NAME + Program.p.name;
+    }
 
     internal static void ClassAdd()
     {
@@ -60,25 +81,6 @@ public class Return
         else info[1] = "Class  : " + Color.SPEAK + Program.p.characterClass;
     }
 
-    internal static void HealthEnergyAdd()
-    {     
-        info[3] = "Health : " + Color.HEALTH + Program.p.hp + Color.RESET + " / " + Color.HEALTH + Program.p.maxHp;
-        info[4] = "Energy : " + Color.ENERGY + Program.p.energy + Color.RESET + " / " + Color.ENERGY + Program.p.maxEnergy;
-    }
-
-    internal static void NameAdd()
-    {
-        info[0] = "Name   : " + Color.NAME + Program.p.name;
-    }
-
-    internal static void ItemAdd()
-    {
-        info[6]  = "Weapon : " + Color.ITEM + Program.p.weapon.name;
-        info[7]  = "Armor  : " + Color.ITEM + Program.p.armor.name;
-        info[11] = "Gold   : " + Color.GOLD + Program.p.gold;
-        items.Clear();
-        items.Add(Color.ITEM + "Inventory"+ Color.RESET);
-        items.Add("");
-        foreach (Equipment e in Program.p.inventory) items.Add(e.name);
-    }
+    internal static void HealthEnergyAdd() => health = true;
+    internal static void ItemAdd() => item = true;   
 }

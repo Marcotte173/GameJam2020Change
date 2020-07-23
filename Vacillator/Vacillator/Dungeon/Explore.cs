@@ -31,8 +31,8 @@ public class Explore
         Return.PlayerInfo();
         if (currentShell.North > 0) Write.Line(20, 18, "["+Color.SPEAK+"N"+Color.RESET+"]orth - ");
         if (currentShell.South > 0) Write.Line(20, 28, "["+Color.SPEAK+"S"+Color.RESET+"]outh - ");
-        if (currentShell.East > 0)  Write.Line(5, 23,  "["+Color.SPEAK+"E"+Color.RESET+"]ast - ");
-        if (currentShell.West > 0)  Write.Line(45, 23, "["+Color.SPEAK+"W"+Color.RESET+"]est - ");
+        if (currentShell.East > 0)  Write.Line(45, 23,  "["+Color.SPEAK+"E"+Color.RESET+"]ast - ");
+        if (currentShell.West > 0)  Write.Line(5, 23, "["+Color.SPEAK+"W"+Color.RESET+"]est - ");
         string choice = Return.Option();
         if (choice == "n" && currentShell.North > 0)
         {

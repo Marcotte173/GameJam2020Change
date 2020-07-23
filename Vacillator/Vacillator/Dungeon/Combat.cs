@@ -1,11 +1,12 @@
-﻿using System;
+﻿using GameJam2020Change;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 public class Combat
 {
     public static List<MonsterCreate> monsterList = new List<MonsterCreate> { };
-    public static Player player = GameJam2020Change.Program.p;
+    public static Player player = Program.p;
     public static List<string> combatText = new List<string> { };
     public static int rewardXp;
     public static int rewardGold;
@@ -69,7 +70,7 @@ public class Combat
             Write.Line(75, 1, "[3] " + monsterList[2].name);
             Write.Line(75, 2, "Health " + monsterList[2].hp + " / " + monsterList[2].maxHp);
         }
-        if (monsterList.Count == 2)
+        else if (monsterList.Count == 2)
         {
             Write.Line(35, 1, "[1] " + monsterList[0].name);
             Write.Line(35, 2, "Health " + monsterList[0].hp + " / " + monsterList[0].maxHp);
@@ -81,15 +82,20 @@ public class Combat
             Write.Line(50, 1, monsterList[0].name);
             Write.Line(50, 2, "Health " + monsterList[0].hp + " / " + monsterList[0].maxHp);
         }
+        Return.PlayerInfo();
     }
 
     private static void PlayerAttack()
     {
         Return.PlayerInfo();
         Write.Line(0, 22, "[1]" + Color.DAMAGE + " Attack   ");
-        if (Return.HaveEnergy(1)) Write.Line(0, 23, "[2] " + Color.ABILITY + player.abilityName1);
+        if (Program.p.characterClass == Class.Adventurer) Write.Line(0, 23, "[X] " + Color.MITIGATION + player.abilityName1);
+        else if (Return.HaveEnergy(1)) Write.Line(0, 23, "[2] " + Color.ABILITY + player.abilityName1);
         else Write.Line(0, 23, "[X] " + Color.GREY + "Not enough energy");
-        Write.Line(0, 24, "[X]" + Color.GREY + " Not Implemented");
+        if (Program.p.characterClass == Class.Adventurer) Write.Line(0, 24, "[X] " + Color.MITIGATION + player.abilityName1);
+        else if (Program.p.level<3) Write.Line(0, 24, "[X]" + Color.GREY + " Unlocked at Level 3");
+        else if (Return.HaveEnergy(2)) Write.Line(0, 24, "[3] " + Color.ABILITY + player.abilityName1);
+        else Write.Line(0, 24, "[X] " + Color.GREY + "Not enough energy");
         Write.Line(0, 25, "[X]" + Color.GREY + " Not Implemented");
         if (player.hp != player.maxHp && player.potion > 0) Write.Line(0, 26, "[5] Healing Potion  " + Color.ITEM + player.potion + Color.RESET + " / " + Color.ITEM + player.maxPotion);
         else if (player.potion < 1) Write.Line(0, 26, "[X]" + Color.GREY + " You are out of Healing Potion");
@@ -139,7 +145,7 @@ public class Combat
             else if (choice == "3") player.BasicAttack(monsterList[2]);
             else BasicAttack();
         }
-        if (monsterList.Count == 2)
+        else if (monsterList.Count == 2)
         {
             Write.Line(45, 8, "Select your target");
             string choice = Return.Option();
