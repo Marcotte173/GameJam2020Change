@@ -8,10 +8,13 @@ public class Manager
     public static bool rogue;
     public static bool warrior;
     public int coreRooms;
-    public static int resetVendor = 2;
+    public static int resetVendor;
+    public static int visited;
+    public static int coreVisited;
 
     public static void Vendor()
     {
+        visited++;
         resetVendor--;
         if (resetVendor <= 0)
         {

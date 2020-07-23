@@ -40,9 +40,8 @@ public class Combat
             Write.Line($"You find {rewardGold} gold");
             Write.Line($"You gain {rewardXp} experience");
             player.gold += rewardGold;
-            player.xp += rewardXp;
-            rewardGold = 0;
-            rewardXp = 0;
+            player.xp += rewardXp;            
+            CleanUp();
             Write.KeyPress(0, 28);
         }
     }
@@ -128,10 +127,19 @@ public class Combat
             Console.Clear();
             Write.Line("Displaying shocking cowardice, you run as fast as you can\n");
             Write.KeyPress();
+            CleanUp();
             Explore.Start();
         }
         else PlayerAttack();
 
+    }
+
+    private static void CleanUp()
+    {
+        rewardGold = 0;
+        rewardXp = 0;
+        combatText.Clear();
+        monsterList.Clear();
     }
 
     private static void BasicAttack()

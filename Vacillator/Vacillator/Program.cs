@@ -66,6 +66,7 @@ namespace GameJam2020Change
             p.name = name;
             Explore.currentShell = Explore.d.shell[1];
             Return.NameAdd();
+            Manager.Vendor();
             Explore.Start();
         }
     }

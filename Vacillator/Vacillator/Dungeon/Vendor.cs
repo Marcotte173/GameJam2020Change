@@ -6,6 +6,7 @@ using System.Text;
 public class Vendor : Room
 {
     public static List<Equipment> list = new List<Equipment> { };
+    public bool firstMeeting;
 
     public Vendor()
     {
@@ -19,7 +20,7 @@ public class Vendor : Room
     {
         Console.Clear();
         Return.ItemAdd();
-        if (!visited)
+        if (!firstMeeting)
         {
             Write.Line(5,5,"You step into a dimly lit room, the smell of damp age is quickly replaced");
             Write.Line(5, 6, "by the sour musk of someone who could not spell the word “soap” and likely has never used it either.");
@@ -27,7 +28,7 @@ public class Vendor : Room
             Write.Line(5, 9, "aaaand Muuuurchaunt heeere to seeellll youuu allll");
             Write.Line(5, 10, "the thiiings Muuurchaunt haave fooound in thiiiiiis heeere hoooouse.");
             Write.Line(5, 12, "You look around and see a few items out for sale.");
-            visited = true;
+            firstMeeting = true;
         }
         else Write.Line(5, 10, visitedFlavor);
         Write.KeyPress();

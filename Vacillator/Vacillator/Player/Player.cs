@@ -13,10 +13,10 @@ public class Player : Creature
     public int[] levelXp = new int[] { 0, 20, 50, 90, 140, 200 };
     public int level;
 
-    public int[] aBaseDamage = { 0,  3,  6, 10 };
-    public int[] wBaseDamage = { 0,  3,  6, 10 };    
-    public int[] mBaseDamage = { 0,  3,  6,  9 };
-    public int[] rBaseDamage = { 0,  4,  8, 13 };
+    public int[] aBaseDamage = { 0,  4,  6, 10 };
+    public int[] wBaseDamage = { 0,  4,  6, 10 };    
+    public int[] mBaseDamage = { 0,  4,  6,  9 };
+    public int[] rBaseDamage = { 0,  5,  8, 13 };
 
     public int[] aBaseHp =     { 0, 50, 23, 31 };
     public int[] wBaseHp =     { 0, 60, 30, 38 };

@@ -49,34 +49,36 @@ public class Room
         int y = 14;
         Write.Line(x, y - 2, "You are discovered by...");
         Thread.Sleep(400);
+        List<MonsterCreate> list = new List<MonsterCreate> { };
+        list = (Manager.coreVisited < 2)? Monsters.list1: Monsters.list2;
         if (howMany == 2)
         {
-            int summon1 = Return.RandomInt(0, Monsters.list.Count);
-            Monsters.Summon(Monsters.list[summon1]);
-            Write.Line(x, y, Monsters.list[summon1].summon);
-            int summon2 = Return.RandomInt(0, Monsters.list.Count);
-            Monsters.Summon(Monsters.list[summon2]);
-            Write.Line(x, y + 1, Monsters.list[summon2].summon);
+            int summon1 = Return.RandomInt(0, list.Count);
+            Monsters.Summon(list[summon1]);
+            Write.Line(x, y, list[summon1].summon);
+            int summon2 = Return.RandomInt(0, list.Count);
+            Monsters.Summon(list[summon2]);
+            Write.Line(x, y + 1, list[summon2].summon);
         }
         else if (howMany == 3)
         {
-            int summon1 = Return.RandomInt(0, Monsters.list.Count);
-            Monsters.Summon(Monsters.list[summon1]);
-            Write.Line(x, y, Monsters.list[summon1].summon);
+            int summon1 = Return.RandomInt(0, list.Count);
+            Monsters.Summon(list[summon1]);
+            Write.Line(x, y, list[summon1].summon);
             
-            int summon2 = Return.RandomInt(0, Monsters.list.Count);
-            Monsters.Summon(Monsters.list[summon2]);
-            Write.Line(x, y + 1, Monsters.list[summon2].summon);
+            int summon2 = Return.RandomInt(0,list.Count);
+            Monsters.Summon(list[summon2]);
+            Write.Line(x, y + 1, list[summon2].summon);
             
-            int summon3 = Return.RandomInt(0, Monsters.list.Count);
-            Monsters.Summon(Monsters.list[summon3]);
-            Write.Line(x, y + 2, Monsters.list[summon3].summon);
+            int summon3 = Return.RandomInt(0, list.Count);
+            Monsters.Summon(list[summon3]);
+            Write.Line(x, y + 2, list[summon3].summon);
         }
         else
         {
-            int summon1 = Return.RandomInt(0, Monsters.list.Count);
-            Monsters.Summon(Monsters.list[summon1]);
-            Write.Line(x, y, Monsters.list[summon1].summon);
+            int summon1 = Return.RandomInt(0, list.Count);
+            Monsters.Summon(list[summon1]);
+            Write.Line(x, y, list[summon1].summon);
         }
         Write.KeyPress(0, 28);
         visited = true;
@@ -100,7 +102,7 @@ public class Room
         else Alone();
     }
 
-    private void RoomSearch()
+    protected void RoomSearch()
     {
         Console.Clear();
         Console.Write("Searching");
