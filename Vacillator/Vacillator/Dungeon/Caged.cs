@@ -6,6 +6,7 @@ using System.Text;
 public class Caged : Room
 
 {
+    public bool good;
 
     public bool haveFood;
 
@@ -58,6 +59,7 @@ public class Caged : Room
             Write.Line(40, 20, "Hungry Boi Eat");
             Write.KeyPress();
             visitedFlavor = "You enter a room with the prisoner who is fed.\nHe smiles.";
+            good = true;
             visited = true;
 =======
             foreach (Equipment item in Program.p.inventory)
@@ -85,6 +87,7 @@ public class Caged : Room
             Write.KeyPress();
             visitedFlavor = "You enter a room with an empty cage.\nThe prisoner is gone";
             visited = true;
+            good = false;
         }
         else if (choice == "k" && !visited)
         {
@@ -93,6 +96,7 @@ public class Caged : Room
             Write.Line(10, 21, "with the softest touch of a weapon, the thing collapses and gushes blood. It is dead.");
             Write.KeyPress();
             visitedFlavor = "You enter a room with a cage and a corpse.\nThe corpse has aged so much";
+            good = false;
             visited = true;
         }
         else if (choice == "l")
