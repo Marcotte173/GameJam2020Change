@@ -56,7 +56,8 @@ public class Return
             items.Clear();
             items.Add(Color.ITEM + "Inventory" + Color.RESET);
             items.Add("");
-            foreach (Equipment e in Program.p.consumables) items.Add(e.name);
+            foreach (Equipment e in Program.p.consumables) items.Add(Color.YELLOW + e.name + Color.RESET);
+            foreach (Equipment e in Program.p.inventory) items.Add(Color.SHIELD + e.name + Color.RESET);
         }
         for (int i = 0; i < info.Length; i++)
         {

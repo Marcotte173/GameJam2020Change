@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 
 public class Caged : Room
-
 {
-
     public bool haveFood;
 
     public Caged()
@@ -52,14 +50,12 @@ public class Caged : Room
 
         if (choice == "f" && !visited && haveFood)
         {
-<<<<<<< HEAD
             Program.p.consumables.RemoveAt(0);
             Console.Clear();
             Write.Line(40, 20, "Hungry Boi Eat");
             Write.KeyPress();
             visitedFlavor = "You enter a room with the prisoner who is fed.\nHe smiles.";
             visited = true;
-=======
             foreach (Equipment item in Program.p.inventory)
             {
                 if (item.type == EquipmentType.Consumable)
@@ -73,9 +69,6 @@ public class Caged : Room
                     break;
                 }
             }
-            
-            
->>>>>>> ba75608b8f93eea69ba0d90c435f03d77ada421e
         }
         else if (choice == "r" && !visited)
         {
@@ -100,10 +93,6 @@ public class Caged : Room
             Console.Clear();
             Write.Line(40, 20, "You head back out the door");
             Write.KeyPress();
-<<<<<<< HEAD
-        }        
-=======
         }
->>>>>>> ba75608b8f93eea69ba0d90c435f03d77ada421e
     }
 }
