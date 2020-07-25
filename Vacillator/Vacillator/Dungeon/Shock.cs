@@ -6,6 +6,7 @@ using System.Text;
 public class Shock : Room
 
 {
+    public bool good;
 
     
 
@@ -47,12 +48,11 @@ public class Shock : Room
         if (choice == "f" && !visited)
         {
             
-                
-            
 
             Console.Clear();
             Write.Line(40, 20, "dopplegangers head roles");
             Write.KeyPress();
+            good = false;
       
             
         }
@@ -62,6 +62,7 @@ public class Shock : Room
             Console.Clear();
             Write.Line(40, 20, "you killed him");
             Write.KeyPress();
+            good = false;
             
             
         }
@@ -70,7 +71,7 @@ public class Shock : Room
             Console.Clear();
             Write.Line(40, 20, "bing bam bop");
             Write.KeyPress();
-            
+            good = true;
             
         }
         else if (choice == "l")

@@ -6,6 +6,7 @@ using System.Text;
 public class Loot : Room
 
 {
+    public bool good;
 
 
 
@@ -42,6 +43,7 @@ public class Loot : Room
         }
         else Write.Line(visitedFlavor);
         Write.Line(55, 28, "[L]eave - ");
+        if(!visited) good = true;
 
         string choice = Return.Option();
         //need to make it so the items and levels actually get set/equipted
@@ -52,6 +54,7 @@ public class Loot : Room
             Write.Line(40, 21, "The pedastool across the room is quickly lowered bellow the floor and it dissapears.");
             Program.p.Equip(Items.crystalSword);
             Write.KeyPress();
+            good = false;
             visited = true;
 
         }
@@ -63,6 +66,7 @@ public class Loot : Room
             Write.Line(40, 21, "The pedastool across the room is quickly lowered bellow the floor and it dissapears.");
             Combat.rewardXp += 100;
             Write.KeyPress();
+            good = false;
             visited = true;
 
 

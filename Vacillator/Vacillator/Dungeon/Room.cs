@@ -22,10 +22,11 @@ public class Room
         roomSize = (sizeChoose > 8) ? RoomSize.Large : (sizeChoose > 5) ? RoomSize.Small : RoomSize.Tiny;
         int typeChoose = Return.RandomInt(0, 10);
         roomType = (typeChoose > 8) ? RoomType.Library : (typeChoose > 1) ? RoomType.Room : RoomType.Hallway;
-        string a = (IsHallway()) ? "hallway" : (IsRoom()) ? "room" : "library";
-        string b = (IsTiny()) ? "tiny" : (IsSmall()) ? "small" : "large";
-        flavor = "You are in a " + b + " " + a + ". Not bad. Spencer, help me out";
-        visitedFlavor = "This is stil a " + b + " " + a + ".";
+        string a = (IsHallway()) ? "hallway. The steps of your feet echo unaturally forward and back" : (IsRoom()) ? "room. where people might have lived, or died" : "library. Many books and texts in languages you could never read. 1's and 0's";
+        string b = (IsTiny()) ? "tiny, clostrophobia enducing" : (IsSmall()) ? "small, human sized" : "large, wide, and endless in hight";
+        string c = (IsHallway()) ? "hallway. The steps of your feet echo unaturally forward and back" : (IsRoom()) ? "room. where people might have lived, or died" : "library. Many books and texts in languages you could never read. 1's and 0's";
+        flavor = "You are in a " + b + " " + a ;
+        visitedFlavor = "This is stil a " + b + " " + c + ".";
         name = b + " " + a;
 
     }
