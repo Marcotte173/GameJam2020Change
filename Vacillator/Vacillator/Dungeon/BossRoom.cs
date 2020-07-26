@@ -25,6 +25,10 @@ public class BossRoom : Room
             Write.KeyPress(0, 28);
             Combat.boss = true;
             Combat.Start();
+            if(Combat.monsterList.Count == 0)
+            {
+                new zorkStart();
+            }
         }
         else
         {
