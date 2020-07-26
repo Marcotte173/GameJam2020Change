@@ -6,13 +6,13 @@ public class zorkGoodEnd
 {
     public zorkGoodEnd()
     {
-        Write.Line(10, 10, "The world around you starts to glitch. Suddenly the memories start coming back to you. This isn't a Manor, nor is this world even real. The realization finally hits you of whatís going on. You need to get out of hereÖ");
+        Write.Line(10, 10, "The world around you starts to glitch. Suddenly the memories start coming back to you. This isn't a Manor, nor is this world even real. The realization finally hits you of what‚Äôs going on. You need to get out of here‚Ä¶");
         Write.KeyPress();
 
         Write.Line(10, 13, "You are standing in a metal room. ");
         Write.Line(10, 14, "The room is empty except for a camera that appears to be watching you.");
         Write.Line(10, 15, "Suddenly you hear a voice reverberate through the room.");
-        Write.Line(10, 16, "ìAh I see youíve finally awoken. Nicely done back there by the way, nicely done indeed. No test subject has been able to make it out of that simulation beforeÖ at least, not sane that is. Anyways Iíll send the guards to come and escort you, you are no longer of use to us. I would say it was a pleasure working with you but you wonít be alive for very long so my breath is wasted on you. Goodbyeî ");
+        Write.Line(10, 16, "‚ÄúAh I see you‚Äôve finally awoken. Nicely done back there by the way, nicely done indeed. No test subject has been able to make it out of that simulation before‚Ä¶ at least, not sane that is. Anyways I‚Äôll send the guards to come and escort you, you are no longer of use to us. I would say it was a pleasure working with you but you won‚Äôt be alive for very long so my breath is wasted on you. Goodbye‚Äù ");
         Write.KeyPress();
 
         Write.Line(10, 17, "Figure out a way to escape before the guards arrive.");
@@ -135,7 +135,7 @@ public class zorkGoodEnd
                     else if (progress == 1)
                     {
                         Console.Clear();
-                        Write.Line(10, 25, "You tear the vent lid off. It was simpler than you expected. But you arenít in the clear yet.");
+                        Write.Line(10, 25, "You tear the vent lid off. It was simpler than you expected. But you aren‚Äôt in the clear yet.");
                         progress++;
                         Write.KeyPress();
                     }
@@ -205,7 +205,7 @@ public class zorkGoodEnd
         Write.Line("While crawling through the vent you fall through a loose panel. You managed to make it into the control room. In Front of you is a large control board with many screens. Each screen shows you camera footage. You are shocked at what you see. Many, many people in many different simulations. Some are struggling, some aren't. As you watch you notice that some of the cameras go out suddenly. Only to turn right back on, but ith someone else at the center of it now. There is only one explanation, and it's not a fond one to think about.");
         Write.KeyPress();
 
-        Write.Line("On the control panel there are many buttons but one of them stands out the most. Itís an emergency shutdown switch. Pushing it will free all the captives. This laboratory will be taken over by the very test subjects that they held here, and the cruelty would end, but you might not be joining them in this escape, you can hear guards just outside the door, pushing it will surely alert them. However you could also just leave now. On your own back through that vent into the outside world. What will you do?");
+        Write.Line("On the control panel there are many buttons but one of them stands out the most. It‚Äôs an emergency shutdown switch. Pushing it will free all the captives. This laboratory will be taken over by the very test subjects that they held here, and the cruelty would end, but you might not be joining them in this escape, you can hear guards just outside the door, pushing it will surely alert them. However you could also just leave now. On your own back through that vent into the outside world. What will you do?");
         Write.KeyPress();
         while (check < 2)
         {
@@ -213,10 +213,10 @@ public class zorkGoodEnd
             bool notPushed = zorkCommand.Contains("don't push button");
             if (pushed)
             {
-                Write.Line("As you push the button you hear alarms start blaring outside and on the screen you can see all the simulations ending and people starting to make their ways into the halls. The guards barge in to see whatís going on and grab you. As they begin to pull you away multiple escapees jump them from behind and knock them out. After a long while of fighting your way through guards with your new companions you all find your way out of the facility and escape!");
+                Write.Line("As you push the button you hear alarms start blaring outside and on the screen you can see all the simulations ending and people starting to make their ways into the halls. The guards barge in to see what‚Äôs going on and grab you. As they begin to pull you away multiple escapees jump them from behind and knock them out. After a long while of fighting your way through guards with your new companions you all find your way out of the facility and escape!");
                 Write.KeyPress();
                 Console.Clear();
-                Write.Line("Congratulations, you got the ending - Everyoneís Savior!");
+                Write.Line("Congratulations, you got the ending - Everyone‚Äôs Savior!");
                 check++;
                 //Add code to unlock class or whatever is intended
             }
@@ -235,7 +235,9 @@ public class zorkGoodEnd
                 Write.KeyPress();
             }
         }
-        //Code to send back to start
+        GameJam2020Change.Program.Start();
     }
 }
+
+
 

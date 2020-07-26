@@ -1,3 +1,4 @@
+using GameJam2020Change;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -242,6 +243,6 @@ public class zorkEvilEnd
         Write.KeyPress();
         Write.Line("Congratulations! You got the ending - Burning in hell!");
         Write.KeyPress();
-        //Code to send back to start
+        GameJam2020Change.Program.Start();
     }
 }
