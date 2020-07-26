@@ -51,17 +51,14 @@ namespace GameJam2020Change
         private static void CharacterClass()
         {
             Console.Clear();
-            Manager.mage = true;
             Write.Line($"{name}, Your eyes are steady, facing down your future, but there is a spark deep within your gaze. The spark of...\n");
-            Write.Line("[1] The Mundane\n\nYou have no real background. This is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an "+Color.SPEAK + "adventurer.\n");
-            if (Manager.mage) Write.Line("[2] The " + Color.ENERGY + "Arcane" + Color.RESET + "\n\nThis is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an " + Color.ABILITY + "Mage.\n");
-            if (Manager.rogue) Write.Line("[3] The " + Color.BLOOD + "Hidden" + Color.RESET + "\n\nThis is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an " + Color.ABILITY + "Rogue.\n");
-            if (Manager.warrior) Write.Line("[4] The " + Color.MITIGATION+"Watchful"+Color.RESET+"\n\nThis is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an " + Color.ABILITY + "Warrior.\n");
+            Write.Line("[1] The " + Color.ENERGY + "Arcane" + Color.RESET + "\n\nThis is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an " + Color.ABILITY + "Mage.\n");
+            Write.Line("[2] The " + Color.BLOOD + "Hidden" + Color.RESET + "\n\nThis is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an " + Color.ABILITY + "Rogue.\n");
+            Write.Line("[3] The " + Color.MITIGATION+"Watchful"+Color.RESET+"\n\nThis is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an " + Color.ABILITY + "Warrior.\n");
             string choice = Return.Option();
-            if (choice == "1") p = new Player(Class.Adventurer);
-            else if (choice == "2" && Manager.mage) p = new Player(Class.Mage);
-            else if (choice == "3" && Manager.rogue) p = new Player(Class.Rogue);
-            else if (choice == "4" && Manager.warrior) p = new Player(Class.Warrior);
+            if (choice == "1" && Manager.mage) p = new Player(Class.Mage);
+            else if (choice == "2" && Manager.rogue) p = new Player(Class.Rogue);
+            else if (choice == "3" && Manager.warrior) p = new Player(Class.Warrior);
             else CharacterClass();
             p.name = name;
             Explore.currentShell = Explore.d.shell[1];
