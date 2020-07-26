@@ -20,6 +20,7 @@ namespace GameJam2020Change
             Write.Line(Color.HEALTH, 40, 11, " \\___/ \\__,_|\\___|_|_|_|\\__,_|\\__\\___/|_|    ");
             Write.Line(100, 26, "Version 0.01");
             Write.KeyPress();
+            GoodEnd.Start();
             Story();
             Start();
         }
