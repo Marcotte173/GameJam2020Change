@@ -24,8 +24,8 @@ public class Room
         int typeChoose = Return.RandomInt(0, 10);
         roomType = (typeChoose > 8) ? RoomType.Library : (typeChoose > 1) ? RoomType.Room : RoomType.Hallway;
         string a = (IsHallway()) ? "hallway. The steps of your feet echo unaturally forward and back" : (IsRoom()) ? "room. where people might have lived, or died" : "library. Many books and texts in languages you could never read. 1's and 0's";
-        string b = (IsTiny()) ? "tiny, clostrophobia enducing" : (IsSmall()) ? "small, human sized" : "large, wide, and endless in hight";
-        string c = (IsHallway()) ? "hallway. The steps of your feet echo unaturally forward and back" : (IsRoom()) ? "room. where people might have lived, or died" : "library. Many books and texts in languages you could never read. 1's and 0's";
+        string b = (IsTiny()) ? "tiny, clostrophobia inducing" : (IsSmall()) ? "small, human sized" : "large, wide, and endless in hight";
+        string c = (IsHallway()) ? "hallway. The steps of your feet echo unnaturally forward and back" : (IsRoom()) ? "room. where people might have lived, or died" : "library. Many books and texts in languages you could never read. 1's and 0's";
         flavor = "You are in a " + b + " " + a ;
         visitedFlavor = "This is stil a " + b + " " + c + ".";
         name = b + " " + a;
@@ -35,7 +35,7 @@ public class Room
     internal virtual void ExploreRoom()
     {
         Console.Clear();
-        Write.Line(40, 20, $"You enter a {Explore.currentShell.room.name}");
+        Write.Line(0, 20, $"You enter a {Explore.currentShell.room.name}");
         Write.KeyPress();
         Console.Clear();
         int summonRoll = Return.RandomInt(1, 101);

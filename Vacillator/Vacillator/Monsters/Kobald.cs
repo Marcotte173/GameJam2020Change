@@ -7,8 +7,8 @@ public class Kobald : MonsterCreate
     public Kobald(int level)
     : base()
     {
-        name = Color.MONSTER + "Kobald" + Color.RESET;
-        summon = Color.MONSTER + "A Kobald" + Color.RESET;
+        name = Color.MONSTER + "Kobold" + Color.RESET;
+        summon = Color.MONSTER + "A Kobold" + Color.RESET;
         hp = maxHp = 10 * level + (3 * level);
         damage = 3 + 2 * level;
         hit = 5 * level;
@@ -22,8 +22,8 @@ public class Kobald : MonsterCreate
     public Kobald()
     : base()
     {
-        name = Color.MONSTER + "Kobald" + Color.RESET;
-        summon = Color.MONSTER + "A Kobald" + Color.RESET;
+        name = Color.MONSTER + "Kobold" + Color.RESET;
+        summon = Color.MONSTER + "A Kobold" + Color.RESET;
         hp = maxHp = 9;
         damage = 7;
         hit = 5;

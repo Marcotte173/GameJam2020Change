@@ -23,6 +23,7 @@ public class BossRoom : Room
             Monsters.Summon(m);
             Write.Line($"SPENCER, WRITE SOME COOL FLAVOR ABOUT {m.summon}");
             Write.KeyPress(0, 28);
+            Combat.boss = true;
             Combat.Start();
         }
         else

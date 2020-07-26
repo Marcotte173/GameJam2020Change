@@ -56,9 +56,9 @@ namespace GameJam2020Change
             Write.Line("[2] The " + Color.BLOOD + "Hidden" + Color.RESET + "\n\nThis is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an " + Color.ABILITY + "Rogue.\n");
             Write.Line("[3] The " + Color.MITIGATION+"Watchful"+Color.RESET+"\n\nThis is terrible writing, but will be replaced by something cool that Spencer writes. \nYou get an " + Color.ABILITY + "Warrior.\n");
             string choice = Return.Option();
-            if (choice == "1" && Manager.mage) p = new Player(Class.Mage);
-            else if (choice == "2" && Manager.rogue) p = new Player(Class.Rogue);
-            else if (choice == "3" && Manager.warrior) p = new Player(Class.Warrior);
+            if (choice == "1") p = new Player(Class.Mage);
+            else if (choice == "2") p = new Player(Class.Rogue);
+            else if (choice == "3") p = new Player(Class.Warrior);
             else CharacterClass();
             p.name = name;
             Explore.currentShell = Explore.d.shell[1];

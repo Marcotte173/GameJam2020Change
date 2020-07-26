@@ -283,10 +283,10 @@ public class Player : Creature
     private void Death()
     {
         Console.Clear();
-        Console.WriteLine(Color.DAMAGE,30,20, "You DIED");
+        Write.Line(30,20, Color.DAMAGE  + "You DIED");
         Write.KeyPress(0, 28);
         Console.Clear();
-        Console.WriteLine("You tried\n\nYou tried but you failed\n\nAnd in the end, is that not the real victory?\n\nThe answer is no\n\nGoodbye");
+        Console.WriteLine("You tried\n\nYou failed but you tried\n\nAnd in the end, is that not the real victory?\n\nThe answer is no\n\nGoodbye");
         Write.KeyPress(0, 28);
         Environment.Exit(0);
     }
