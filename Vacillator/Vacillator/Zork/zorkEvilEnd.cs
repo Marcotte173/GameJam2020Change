@@ -245,4 +245,3 @@ public class zorkEvilEnd
         //Code to send back to start
     }
 }
-

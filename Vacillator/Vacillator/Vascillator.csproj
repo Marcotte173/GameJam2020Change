@@ -76,8 +76,8 @@
   <ItemGroup>
     <Compile Include="Dungeon\BossRoom.cs" />
     <Compile Include="Dungeon\Caged.cs" />
-    <Compile Include="Loot.cs" />
-    <Compile Include="Shock.cs" />
+    <Compile Include="Dungeon\Loot.cs" />
+    <Compile Include="Dungeon\Shock.cs" />
     <Compile Include="Utilities\Color.cs" />
     <Compile Include="Dungeon\Combat.cs" />
     <Compile Include="Player\Creature.cs" />
@@ -107,6 +107,10 @@
     <Compile Include="Dungeon\StartRoom.cs" />
     <Compile Include="Dungeon\Vendor.cs" />
     <Compile Include="Utilities\Write.cs" />
+    <Compile Include="Zork\zorkEvilEnd.cs" />
+    <Compile Include="Zork\zorkGoodEnd.cs" />
+    <Compile Include="Zork\zorkNeutralEnd.cs" />
+    <Compile Include="Zork\zorkStart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -127,8 +131,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Zork\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

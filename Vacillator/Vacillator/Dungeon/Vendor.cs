@@ -52,7 +52,7 @@ public class Vendor : Room
         Write.Line(0, 28, "[0] Leave");
         //input and check if buyable, then equipt(change to add to invintory?)
         int choice = Return.Int();
-        if (choice > 0 && choice <= list.Count)
+        if (choice > 0 && choice < list.Count)
         {
             if (Return.HaveGold(list[choice - 1].value))
             {

@@ -20,3 +20,13 @@ C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\obj\Debug\Va
 C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\obj\Debug\Vacillator.application
 C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\obj\Debug\Vacillator.exe
 C:\Users\Marcotte\Documents\GameJam2020Change\Vacillator\Vacillator\obj\Debug\Vacillator.pdb
+E:\Game Jams\GameJam2020Change-master\GameJam2020Change-master\Vacillator\Vacillator\obj\Debug\Vascillator.csproj.CoreCompileInputs.cache
+E:\Game Jams\GameJam2020Change-master\GameJam2020Change-master\Vacillator\Vacillator\obj\Debug\Vacillator.exe
+E:\Game Jams\GameJam2020Change-master\GameJam2020Change-master\Vacillator\Vacillator\obj\Debug\Vacillator.pdb
+E:\Game Jams\GameJam2020Change-master\GameJam2020Change-master\Vacillator\Vacillator\bin\Debug\Vacillator.exe.config
+E:\Game Jams\GameJam2020Change-master\GameJam2020Change-master\Vacillator\Vacillator\bin\Debug\Vacillator.exe.manifest
+E:\Game Jams\GameJam2020Change-master\GameJam2020Change-master\Vacillator\Vacillator\bin\Debug\Vacillator.application
+E:\Game Jams\GameJam2020Change-master\GameJam2020Change-master\Vacillator\Vacillator\bin\Debug\Vacillator.exe
+E:\Game Jams\GameJam2020Change-master\GameJam2020Change-master\Vacillator\Vacillator\bin\Debug\Vacillator.pdb
+E:\Game Jams\GameJam2020Change-master\GameJam2020Change-master\Vacillator\Vacillator\obj\Debug\Vacillator.exe.manifest
+E:\Game Jams\GameJam2020Change-master\GameJam2020Change-master\Vacillator\Vacillator\obj\Debug\Vacillator.application

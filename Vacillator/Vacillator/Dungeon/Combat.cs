@@ -1,4 +1,4 @@
-using GameJam2020Change;
+﻿using GameJam2020Change;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -96,16 +96,14 @@ public class Combat
         else if (Return.HaveEnergy(2)) Write.Line(0, 24, "[3] " + Color.ABILITY + player.abilityName1);
         else Write.Line(0, 24, "[X] " + Color.GREY + "Not enough energy");
         if(Program.p.consumables.Count == 0)Write.Line(0, 25, "[X]" + Color.GREY + " No Consumables");
-        else Write.Line(0, 25, "[4] " + Color.YELLOW + Program.p.consumables[0].name);
+        else 
         if (player.hp != player.maxHp && player.potion > 0) Write.Line(0, 26, "[5] Healing Potion  " + Color.ITEM + player.potion + Color.RESET);
         else if (player.potion < 1) Write.Line(0, 26, "[X]" + Color.GREY + " You are out of Healing Potion");
         else Write.Line(0, 26, "[X]" + Color.GREY + " You don't need healing");
         Write.Line(0, 28, "[0] Run");
         string choice = Return.Option();
         if (choice == "1") BasicAttack();
-        else if (choice == "2" && Return.HaveEnergy(1) && Program.p.characterClass != Class.Adventurer) player.CastAbility1();
-        else if (choice == "3" && Return.HaveEnergy(2) && Program.p.characterClass != Class.Adventurer && Program.p.level >2) player.CastAbility2();
-        else if (choice == "4" && Program.p.consumables.Count >0) UseConsumable(Program.p.consumables[0]);
+        else if (choice == "2" && Return.HaveEnergy(1)) player.CastAbility1();
         else if (choice == "5" && player.hp != player.maxHp && player.potion > 0)
         {
             int dif = player.maxHp - player.hp;
@@ -135,17 +133,6 @@ public class Combat
         }
         else PlayerAttack();
 
-    }
-
-    private static void UseConsumable(Equipment e)
-    {
-        if (e.name == Color.YELLOW + "Potion")
-        {
-            Program.p.potion = 25;
-            Combat.combatText.Add("You refill your potion");
-            Program.p.RemoveItem(e);
-        }
-        CombatLoop();
     }
 
     private static void CleanUp()

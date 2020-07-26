@@ -42,24 +42,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vacillator.exe" size="59904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vacillator.exe" size="82432">
       <assemblyIdentity name="Vacillator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KL27d9V3UPY+inxMCSrG0GJl7Qlcj7kgDr5wbrX5pKQ=</dsig:DigestValue>
+        <dsig:DigestValue>MsL4Mx1mwp5LKt8JK45/voaOUTXLGgvtE+Kt2V3u0P0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Vacillator.exe.config" size="161">
+  <file name="Vacillator.exe.config" size="158">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>1SR2HBfPDeqUEJ8/zazS7LZ1UBFf+eAwf3jAUFVBnv4=</dsig:DigestValue>
+      <dsig:DigestValue>xSL5qCqP5KhGdIkpvYOVK5Xixz9Rw3NoQaK0PLDzQSQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

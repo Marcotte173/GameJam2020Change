@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -32,9 +32,9 @@ public class Items
     public static Equipment blueArmor = new Equipment(Color.ITEM + "Blue Chest" + Color.RESET, 3, 5, 0, 0, EquipmentType.Armor, 1500);
     public static Equipment crystalArmor = new Equipment(Color.ITEM + "Crystal Chest" + Color.RESET, 10, 10, 0, 0, EquipmentType.Armor, 3000);
 
-    public static Equipment apple = new Equipment(Color.YELLOW + "Apple", 0, 3, 0, 0, EquipmentType.Consumable, 150);
+    public static Equipment apple = new Equipment(Color.YELLOW + "Apple", 0, 3, 0, 0, EquipmentType.Consumable, 50);
     public static Equipment potion = new Equipment(Color.YELLOW + "Potion", 0, 5, 0, 0, EquipmentType.Consumable, 100);
-    public static Equipment chicken = new Equipment(Color.YELLOW + "Chicken", 0, 10, 0, 0, EquipmentType.Consumable, 250);
+    public static Equipment chicken = new Equipment(Color.YELLOW + "Chicken", 0, 10, 0, 0, EquipmentType.Consumable, 150);
 
     public static List<Equipment> weapons = new List<Equipment> { noWeapon, dagger, redDagger, blueDagger, sword, redSword, blueSword, crystalSword };
     public static List<Equipment> armors = new List<Equipment> { noArmor, clothArmor, leatherArmor, chainArmor, plateArmor, redArmor, blueArmor, crystalArmor };

@@ -1,4 +1,4 @@
-using GameJam2020Change;
+﻿using GameJam2020Change;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -153,16 +153,19 @@ public class Player : Creature
         if (e.type == EquipmentType.Weapon) weapon = e.Copy();
         else if (e.type == EquipmentType.Consumable)
         {
-            consumables.Add(e.Copy());
-            Return.items.Add(e.name);
+            if (e.name == "Potion")
+            {
+                Write.Line("Your potion is refilled to 25");
+                Program.p.potion = 25;
+            }
+            else
+            {
+                consumables.Add(e.Copy());
+                Return.items.Add(e.name);
+            }
         }
         else armor = e.Copy();
-    }
 
-    public void RemoveItem(Equipment e)
-    {
-        consumables.Remove(e);
-        Return.items.Remove(e.name);
     }
 
     internal void LevelUp()
@@ -256,12 +259,7 @@ public class Player : Creature
         }
     }
 
-    internal void CastAbility2()
-    {
-
-    }
-
-        public void BasicAttack(MonsterCreate target)
+    public void BasicAttack(MonsterCreate target)
     {
         int hitRoll = Return.RandomInt(0, 101);
         int critRoll = Return.RandomInt(0, 101);

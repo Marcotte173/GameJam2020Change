@@ -1,4 +1,4 @@
-using GameJam2020Change;
+﻿using GameJam2020Change;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -56,8 +56,7 @@ public class Return
             items.Clear();
             items.Add(Color.ITEM + "Inventory" + Color.RESET);
             items.Add("");
-            foreach (Equipment e in Program.p.consumables) items.Add(Color.YELLOW + e.name + Color.RESET);
-            foreach (Equipment e in Program.p.inventory) items.Add(Color.SHIELD + e.name + Color.RESET);
+            foreach (Equipment e in Program.p.consumables) items.Add(e.name);
         }
         for (int i = 0; i < info.Length; i++)
         {
