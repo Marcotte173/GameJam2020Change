@@ -1,4 +1,4 @@
-﻿using GameJam2020Change;
+using GameJam2020Change;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,7 +6,7 @@ using System.Text;
 public class Shock : Room
 
 {
-    public bool good;
+    
 
     
 

@@ -6,8 +6,12 @@ using System.Text;
 public class Caged : Room
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     public bool good;
+=======
+    
+>>>>>>> e1562ec7cf28184aa567f602baea8f8bc5c3d58c
 
 >>>>>>> e86f2056c71b7499cbd6ae3baa519d1b408d424d
     public bool haveFood;
@@ -55,6 +59,10 @@ public class Caged : Room
 
         if (choice == "f" && !visited && haveFood)
         {
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1562ec7cf28184aa567f602baea8f8bc5c3d58c
             Program.p.consumables.RemoveAt(0);
             Console.Clear();
             Write.Line(40, 20, "Hungry Boi Eat");
@@ -62,6 +70,10 @@ public class Caged : Room
             visitedFlavor = "You enter a room with the prisoner who is fed.\nHe smiles.";
             good = true;
             visited = true;
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1562ec7cf28184aa567f602baea8f8bc5c3d58c
             foreach (Equipment item in Program.p.inventory)
             {
                 if (item.type == EquipmentType.Consumable)
@@ -75,6 +87,12 @@ public class Caged : Room
                     break;
                 }
             }
+<<<<<<< HEAD
+=======
+            
+            
+
+>>>>>>> e1562ec7cf28184aa567f602baea8f8bc5c3d58c
         }
         else if (choice == "r" && !visited)
         {
@@ -101,6 +119,14 @@ public class Caged : Room
             Console.Clear();
             Write.Line(40, 20, "You head back out the door");
             Write.KeyPress();
+<<<<<<< HEAD
         }
+=======
+
+        }        
+
+        }
+
+>>>>>>> e1562ec7cf28184aa567f602baea8f8bc5c3d58c
     }
-}
+

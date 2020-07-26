@@ -1,4 +1,4 @@
-﻿using GameJam2020Change;
+using GameJam2020Change;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +15,7 @@ public class Room
     public bool visited;
     public RoomType roomType;
     public RoomSize roomSize;
+    public bool good;
 
     public Room()
     {
@@ -175,3 +176,4 @@ public class Room
     public bool IsSmall() => roomSize == RoomSize.Small;
     public bool IsLarge() => roomSize == RoomSize.Large;
 }
+

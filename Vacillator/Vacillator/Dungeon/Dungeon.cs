@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
@@ -7,8 +7,12 @@ public class Dungeon
 {
     public List<Shell> shell;
     public static Vendor v = new Vendor();
+    public int core1Roll;
+    public int core2Roll;
+    public int core3Roll;
     public Dungeon()
     {
+        
         shell = new List<Shell>
         {
             null,
@@ -41,9 +45,9 @@ public class Dungeon
             new Shell(0,0,0,22,true, new Room()),
             new Shell(0,0,2,0,true, new BossRoom()),
         };
-        int core1Roll = Return.RandomInt(6, 10);
-        int core2Roll = Return.RandomInt(13, 17);
-        int core3Roll = Return.RandomInt(20, 25);
+        core1Roll = Return.RandomInt(6, 10);
+        core2Roll = Return.RandomInt(13, 17);
+        core3Roll = Return.RandomInt(20, 25);
         shell[core1Roll].room = new Caged();
         shell[core2Roll].room = new Shock();
         shell[core3Roll].room = new Loot();

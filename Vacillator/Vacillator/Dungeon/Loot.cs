@@ -6,7 +6,7 @@ using System.Text;
 public class Loot : Room
 
 {
-    public bool good;
+    
 
 
 

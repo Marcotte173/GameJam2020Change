@@ -1,4 +1,4 @@
-﻿public class MonsterCreate : Creature
+public class MonsterCreate : Creature
 {
     public string summon;
     public bool boss;

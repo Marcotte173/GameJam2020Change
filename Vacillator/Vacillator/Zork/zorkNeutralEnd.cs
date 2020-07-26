@@ -2,17 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
-public class zorkNeutralEnd : Room
+public class zorkNeutralEnd
 {
     public zorkNeutralEnd()
     {
-        Write.Line(10, 10, "The world around you starts to glitch. Suddenly the memories start coming back to you. This isn't a Manor, nor is this world even real. The realization finally hits you of whatís going on. You need to get out of hereÖ");
+        Write.Line(10, 10, "The world around you starts to glitch. Suddenly the memories start coming back to you. This isn't a Manor, nor is this world even real. The realization finally hits you of what‚Äôs going on. You need to get out of here‚Ä¶");
         Write.KeyPress();
 
         Write.Line(10, 13, "You are standing in a metal room. ");
         Write.Line(10, 14, "The room is empty except for a camera that appears to be watching you.");
         Write.Line(10, 15, "Suddenly you hear a voice reverberate through the room.");
-        Write.Line(10, 16, "ìAh I see youíve finally awoken. Nicely done back there by the way, nicely done indeed. No test subject has been able to make it out of that simulation beforeÖ at least, not sane that is. Anyways Iíll send the guards to come and escort you, you are no longer of use to us. I would say it was a pleasure working with you but you wonít be alive for very long so my breath is wasted on you. Goodbyeî ");
+        Write.Line(10, 16, "‚ÄúAh I see you‚Äôve finally awoken. Nicely done back there by the way, nicely done indeed. No test subject has been able to make it out of that simulation before‚Ä¶ at least, not sane that is. Anyways I‚Äôll send the guards to come and escort you, you are no longer of use to us. I would say it was a pleasure working with you but you won‚Äôt be alive for very long so my breath is wasted on you. Goodbye‚Äù ");
         Write.KeyPress();
 
         Write.Line(10, 17, "You have 5 turns. Figure out a way to escape before the guards arrive.");
@@ -151,7 +151,7 @@ public class zorkNeutralEnd : Room
                         else if (progress == 1)
                         {
                             Console.Clear();
-                            Write.Line(10, 25, "You tear the vent lid off. It was simpler than you expected. But you arenít in the clear yet.");
+                            Write.Line(10, 25, "You tear the vent lid off. It was simpler than you expected. But you aren‚Äôt in the clear yet.");
                             progress++;
                             turns--;
                             Write.KeyPress();
@@ -250,7 +250,7 @@ public class zorkNeutralEnd : Room
             bool escape = zorkCommand.Contains("escape");
             if (codeCheck)
             {
-                Write.Line("You unlocked the panel, and subsequently started a countdown timer. A robotic voice sais ìTHE CLEANSING WILL BEGIN SHORTLYî . . . Well that canít be good.The guards outside hear the commotion and enter the room and apprehend you.It is too late to stop the machine so they just keep you tied up until the countdown hits zero.Then everything goes white.Who are you again ? What were you in the past ? Who really cares anymore.All you can focus on is the blinding light.And then Silence.");
+                Write.Line("You unlocked the panel, and subsequently started a countdown timer. A robotic voice sais ‚ÄúTHE CLEANSING WILL BEGIN SHORTLY‚Äù . . . Well that can‚Äôt be good.The guards outside hear the commotion and enter the room and apprehend you.It is too late to stop the machine so they just keep you tied up until the countdown hits zero.Then everything goes white.Who are you again ? What were you in the past ? Who really cares anymore.All you can focus on is the blinding light.And then Silence.");
                 Write.KeyPress();
                 Console.Clear();
                 Write.Line("Congratulations you got the ending - Purified!");

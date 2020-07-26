@@ -7,20 +7,20 @@ public class zorkStart : Room
 {
    public zorkStart()
    {
-       //Sends you to Good ending track
-       if (Shock.good && Caged.good && Loot.good) 
+        //Sends you to Good ending track
+       if (Explore.d.shell[Explore.d.core1Roll].room.good && Explore.d.shell[Explore.d.core2Roll].room.good && Explore.d.shell[Explore.d.core3Roll].room.good)
        { 
-          zorkGoodEnd();
+          new zorkGoodEnd();
        }
        //Sends you to Neutral ending track
-       else if (Shock.good || Caged.good || Loot.good)
+       else if (Explore.d.shell[Explore.d.core1Roll].room.good || Explore.d.shell[Explore.d.core2Roll].room.good || Explore.d.shell[Explore.d.core3Roll].room.good)
        {
-         zorkNeutralEnd();
+         new zorkNeutralEnd();
        }
        //Sends you to Bad ending track
        else
        {
-         zorkBadEnd();
+         new zorkEvilEnd();
 
        }
    }
