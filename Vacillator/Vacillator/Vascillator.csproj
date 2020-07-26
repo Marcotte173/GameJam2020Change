@@ -107,10 +107,10 @@
     <Compile Include="Dungeon\StartRoom.cs" />
     <Compile Include="Dungeon\Vendor.cs" />
     <Compile Include="Utilities\Write.cs" />
-    <Compile Include="Zork\zorkEvilEnd.cs" />
-    <Compile Include="Zork\zorkGoodEnd.cs" />
-    <Compile Include="Zork\zorkNeutralEnd.cs" />
-    <Compile Include="Zork\zorkStart.cs" />
+    <Compile Include="Zork\EvilEnd.cs" />
+    <Compile Include="Zork\GoodEnd.cs" />
+    <Compile Include="Zork\NeutralEnd.cs" />
+    <Compile Include="Zork\Zork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

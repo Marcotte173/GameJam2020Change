@@ -90,7 +90,7 @@ public class Room
 
     public void Alone()
     {
-        //Alone, search the room or move on
+        Console.Clear();
         Write.Line("You appear to be alone... for now");
         Write.Line(0, 25, "[S]earch the room");
         Write.Line(0, 26, "[M]ove on");

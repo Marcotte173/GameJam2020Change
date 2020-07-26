@@ -15,8 +15,10 @@ public class BossRoom : Room
     {
         Console.Clear();
         Write.Line(0, 10, flavor);
+        Write.KeyPress();
+        Console.Clear();
         if (Manager.coreVisited > 2)
-        {
+        {            
             MonsterCreate m = Monsters.orcs[1];
             m.name = "Savage Orc";
             m.summon = "A Savage Orc";
@@ -25,10 +27,6 @@ public class BossRoom : Room
             Write.KeyPress(0, 28);
             Combat.boss = true;
             Combat.Start();
-            if(Combat.monsterList.Count == 0)
-            {
-                new zorkStart();
-            }
         }
         else
         {

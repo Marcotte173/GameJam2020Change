@@ -30,7 +30,7 @@ public class Combat
         Write.KeyPress();
         if (boss)
         {
-            //Go to Zork 
+            Zork.Start();
         }
         else
         {

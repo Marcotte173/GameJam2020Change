@@ -10,7 +10,7 @@ public class Manager
     public int coreRooms;
     public static int resetVendor;
     public static int visited;
-    public static int coreVisited;
+    public static int coreVisited = 3;
 
     public static void Vendor()
     {
