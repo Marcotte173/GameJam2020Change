@@ -56,7 +56,7 @@ public class Loot : Room
             Write.KeyPress();
             good = false;
             visited = true;
-
+            Manager.coreVisited++;
         }
         else if (choice == "a" && !visited )
         {
@@ -68,7 +68,7 @@ public class Loot : Room
             Write.KeyPress();
             good = false;
             visited = true;
-
+            Manager.coreVisited++;
 
         }
         

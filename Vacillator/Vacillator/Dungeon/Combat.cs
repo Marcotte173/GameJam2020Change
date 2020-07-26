@@ -132,7 +132,6 @@ public class Combat
             Explore.Start();
         }
         else PlayerAttack();
-
     }
 
     private static void CleanUp()

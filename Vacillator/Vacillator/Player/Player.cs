@@ -277,17 +277,18 @@ public class Player : Creature
     {
         hp -= dam;
         Combat.combatText.Add(flavor);
-        if (hp <= 0) Death(m);
+        if (hp <= 0) Death();
     }
 
     private void Death()
     {
-        Combat.combatText.Add("");
-        Combat.combatText.Add("You died!");
-    }
-    private void Death(MonsterCreate m)
-    {
-        //You died. Something should happen
+        Console.Clear();
+        Console.WriteLine(Color.DAMAGE,30,20, "You DIED");
+        Write.KeyPress(0, 28);
+        Console.Clear();
+        Console.WriteLine("You tried\n\nYou tried but you failed\n\nAnd in the end, is that not the real victory?\n\nThe answer is no\n\nGoodbye");
+        Write.KeyPress(0, 28);
+        Environment.Exit(0);
     }
 
     public void Refresh()

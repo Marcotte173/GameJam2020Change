@@ -72,6 +72,7 @@ public class Caged : Room
                     Write.KeyPress();
                     visitedFlavor = "You enter a room with the prisoner who is fed.\nHe smiles.";
                     visited = true;
+                    Manager.coreVisited++;
                     break;
                 }
             }
@@ -88,6 +89,7 @@ public class Caged : Room
             visitedFlavor = "You enter a room with an empty cage.\nThe prisoner is gone";
             visited = true;
             good = false;
+            Manager.coreVisited++;
         }
         else if (choice == "k" && !visited)
         {
@@ -98,6 +100,7 @@ public class Caged : Room
             visitedFlavor = "You enter a room with a cage and a corpse.\nThe corpse has aged so much";
             good = false;
             visited = true;
+            Manager.coreVisited++;
         }
         else if (choice == "l")
         {
@@ -105,9 +108,9 @@ public class Caged : Room
             Write.Line(40, 20, "You head back out the door");
             Write.KeyPress();
 
-        }        
-
         }
-
+        Manager.coreVisited++;
     }
+
+}
 

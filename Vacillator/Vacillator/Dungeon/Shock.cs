@@ -53,7 +53,6 @@ public class Shock : Room
             Write.Line(40, 20, "dopplegangers head roles");
             Write.KeyPress();
             good = false;
-      
             
         }
         else if (choice == "r" && !visited && (Program.p.weapon != Items.noWeapon))
@@ -63,8 +62,7 @@ public class Shock : Room
             Write.Line(40, 20, "you killed him");
             Write.KeyPress();
             good = false;
-            
-            
+
         }
         else if (choice == "d" && !visited)
         {
@@ -72,7 +70,6 @@ public class Shock : Room
             Write.Line(40, 20, "bing bam bop");
             Write.KeyPress();
             good = true;
-            
         }
         else if (choice == "l")
         {
@@ -80,6 +77,7 @@ public class Shock : Room
             Write.Line(40, 20, "You head back out the door");
             Write.KeyPress();
         }
+        Manager.coreVisited++;
         visited = true;
     }
 }

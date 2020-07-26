@@ -14,12 +14,22 @@ public class BossRoom : Room
     internal override void ExploreRoom()
     {
         Console.Clear();
-        if (visited) Write.Line(visitedFlavor);
+        Write.Line(0, 10, flavor);
+        if (Manager.coreVisited > 2)
+        {
+            MonsterCreate m = Monsters.orcs[1];
+            m.name = "Savage Orc";
+            m.summon = "A Savage Orc";
+            Monsters.Summon(m);
+            Write.Line($"SPENCER, WRITE SOME COOL FLAVOR ABOUT {m.summon}");
+            Write.KeyPress(0, 28);
+            Combat.Start();
+        }
         else
         {
-            Write.Line(0, 10, flavor);
+            Write.Line("There is more to do in this dungeon. Come back when you have explored more");
+            Write.KeyPress();
         }
-        Write.KeyPress();
         Console.Clear();        
     }    
 }
